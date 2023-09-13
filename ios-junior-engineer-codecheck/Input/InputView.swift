@@ -64,7 +64,7 @@ struct InputView: View {
             VStack(alignment: .leading) {
                 Text("血液型")
                     .font(.title3)
-                Text("A型")
+                Text(dataController.bloodType)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.all)
                     .background{
