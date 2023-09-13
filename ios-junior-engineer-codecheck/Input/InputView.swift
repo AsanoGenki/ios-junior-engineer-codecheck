@@ -11,6 +11,7 @@ struct InputView: View {
     @ObservedObject var dataController = DataController()
     @State private var editting = false
     @State var isShowingBirthdaySheet = false
+    @State var isShowingBloodTypeSheet = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 28) {
@@ -73,6 +74,11 @@ struct InputView: View {
                                 lineWidth: 2
                             )
                     }
+                    .contentShape(RoundedRectangle(cornerRadius: 12))
+                    .onTapGesture {
+                        self.isShowingBloodTypeSheet.toggle()
+                    }
+                
             }
             Button("占う") {
                 print("占うが押されました")
@@ -83,6 +89,10 @@ struct InputView: View {
         }
         .sheet(isPresented: $isShowingBirthdaySheet) {
             birthdaySheet(birthDay: $dataController.birthDay)
+                .presentationDetents([ .fraction(0.35)])
+                }
+        .sheet(isPresented: $isShowingBloodTypeSheet) {
+            bloodTypeSheet(bloodType: $dataController.bloodType)
                 .presentationDetents([ .fraction(0.35)])
                 }
         

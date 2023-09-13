@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct bloodTypeSheet: View {
-    @State var bloodType = "A型"
+    @Binding var bloodType: String
     @Environment(\.dismiss) private var dismiss
     var body: some View {
         NavigationView {
@@ -29,7 +29,8 @@ struct bloodTypeSheet: View {
 }
 
 struct bloodTypeSheet_Previews: PreviewProvider {
+    @State static var bloodType: String = "A型"
     static var previews: some View {
-        bloodTypeSheet()
+        bloodTypeSheet(bloodType: $bloodType)
     }
 }
