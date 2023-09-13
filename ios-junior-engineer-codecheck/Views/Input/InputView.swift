@@ -51,7 +51,7 @@ struct InputView: View {
                     .background{
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(
-                                Color(UIColor.separator),
+                                isShowingBirthdaySheet ? Color.green : Color(UIColor.separator),
                                 lineWidth: 2
                             )
                     }
@@ -70,7 +70,7 @@ struct InputView: View {
                     .background{
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(
-                                Color(UIColor.separator),
+                                isShowingBloodTypeSheet ? Color.green : Color(UIColor.separator),
                                 lineWidth: 2
                             )
                     }
