@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InputView: View {
     @State var name = ""
+    @State private var editting = false
     var body: some View {
         VStack(alignment: .leading, spacing: 28) {
             Text("あなたについて教えてください")
@@ -18,7 +19,24 @@ struct InputView: View {
             VStack(alignment: .leading) {
                 Text("名前")
                     .font(.title3)
-                TextField("山田太郎", text: $name)
+                TextField("山田太郎",
+                          text: $name,
+                          onEditingChanged: { begin in
+                    if begin {
+                        self.editting = true
+                    } else {
+                        self.editting = false
+                    }
+                    
+                })
+                .padding(.all)
+                .background{
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(
+                            editting ? Color.green : Color(UIColor.separator),
+                            lineWidth: 2
+                        )
+                }
             }
             
             VStack(alignment: .leading) {
