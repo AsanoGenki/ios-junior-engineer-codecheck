@@ -83,6 +83,10 @@ struct InputView: View {
                     
                 }
                 Button {
+                    Task {
+                        await dataController.readFortune()
+                    }
+                    
                     isShowingResultView.toggle()
                 } label: {
                     ButtonView(text: "占う", color: .blue)
