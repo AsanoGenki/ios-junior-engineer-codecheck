@@ -44,7 +44,7 @@ struct InputView: View {
             VStack(alignment: .leading) {
                 Text("誕生日")
                     .font(.title3)
-                Text("2003/02/18")
+                Text(dateToString(dateString: dataController.birthDay)!)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.all)
                     .background{
@@ -89,6 +89,13 @@ struct InputView: View {
         .padding(.leading)
         .padding(.trailing)
         
+    }
+    
+    func dateToString(dateString: Date) -> String? {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter.string(from: dateString)
     }
 }
 
