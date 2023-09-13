@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputView: View {
-    @State var name = ""
+    @ObservedObject var dataController = DataController()
     @State private var editting = false
     var body: some View {
         VStack(alignment: .leading, spacing: 28) {
@@ -20,7 +20,7 @@ struct InputView: View {
                 Text("名前")
                     .font(.title3)
                 TextField("山田太郎",
-                          text: $name,
+                          text: $dataController.userName,
                           onEditingChanged: { begin in
                     if begin {
                         self.editting = true
