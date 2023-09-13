@@ -61,6 +61,16 @@
 			path = Input;
 			sourceTree = "<group>";
 		};
+		4A02FE832AB171DB008B2FEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A02FE7C2AB16313008B2FEC /* Start */,
+				4A02FE7D2AB16326008B2FEC /* Input */,
+				4A02FE812AB16F88008B2FEC /* ButtonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4A9F51082AB1388200F02893 = {
 			isa = PBXGroup;
 			children = (
@@ -80,9 +90,7 @@
 		4A9F51132AB1388200F02893 /* ios-junior-engineer-codecheck */ = {
 			isa = PBXGroup;
 			children = (
-				4A02FE812AB16F88008B2FEC /* ButtonView.swift */,
-				4A02FE7C2AB16313008B2FEC /* Start */,
-				4A02FE7D2AB16326008B2FEC /* Input */,
+				4A02FE832AB171DB008B2FEC /* Views */,
 				4A02FE782AB154CF008B2FEC /* DataController.swift */,
 				4A9F51142AB1388200F02893 /* ios_junior_engineer_codecheckApp.swift */,
 				4A9F51182AB1388400F02893 /* Assets.xcassets */,
