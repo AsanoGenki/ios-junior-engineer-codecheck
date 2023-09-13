@@ -29,12 +29,7 @@ struct StartView: View {
                 NavigationLink {
                     InputView()
                 } label: {
-                    Text("スタート")
-                        .frame(minWidth: 150)
-                        .foregroundColor(.white)
-                        .font(.system(.title2, design: .rounded).bold())
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 15).fill(Color.blue.opacity(0.8)))
+                    ButtonView(text: "はじめる", color: .blue)
                 }
             }
         }

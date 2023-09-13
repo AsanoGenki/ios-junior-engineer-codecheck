@@ -80,8 +80,10 @@ struct InputView: View {
                     }
                 
             }
-            Button("占う") {
+            Button {
                 print("占うが押されました")
+            } label: {
+                ButtonView(text: "占う", color: .blue)
             }
             .frame(maxWidth: .infinity, alignment: .center)
             
