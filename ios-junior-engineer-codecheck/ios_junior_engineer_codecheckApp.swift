@@ -11,7 +11,7 @@ import SwiftUI
 struct ios_junior_engineer_codecheckApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
         }
     }
 }
