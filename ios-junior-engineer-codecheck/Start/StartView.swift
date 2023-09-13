@@ -9,31 +9,33 @@ import SwiftUI
 
 struct StartView: View {
     var body: some View {
-        VStack {
-            Text("都道府県")
-                .font(.system(size: 54))
-                .fontWeight(.semibold)
-                .foregroundColor(.green)
-            Text("相性占い")
-                .font(.system(size: 54))
-                .fontWeight(.semibold)
-                .foregroundColor(.green)
-            
-            Image("nihonchizu")
-                .resizable()
-                .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width * 0.8)
-                .padding(.top, 20)
-            
-            NavigationLink {
+        NavigationView {
+            VStack {
+                Text("都道府県")
+                    .font(.system(size: 54))
+                    .fontWeight(.semibold)
+                    .foregroundColor(.green)
+                Text("相性占い")
+                    .font(.system(size: 54))
+                    .fontWeight(.semibold)
+                    .foregroundColor(.green)
                 
-            } label: {
-                Text("スタート")
-                    .frame(minWidth: 150)
-                    .foregroundColor(.white)
-                    .font(.system(.title2, design: .rounded).bold())
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius: 15).fill(Color.blue.opacity(0.8)))
+                Image("nihonchizu")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: UIScreen.main.bounds.width * 0.8)
+                    .padding(.top, 20)
+                
+                NavigationLink {
+                    InputView()
+                } label: {
+                    Text("スタート")
+                        .frame(minWidth: 150)
+                        .foregroundColor(.white)
+                        .font(.system(.title2, design: .rounded).bold())
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 15).fill(Color.blue.opacity(0.8)))
+                }
             }
         }
     }
