@@ -12,6 +12,7 @@ struct InputView: View {
     @State private var editting = false
     @State var isShowingBirthdaySheet = false
     @State var isShowingBloodTypeSheet = false
+    @State var isShowingResultView = false
     
     var body: some View {
         GeometryReader { _ in
@@ -82,7 +83,7 @@ struct InputView: View {
                     
                 }
                 Button {
-                    print("占うが押されました")
+                    isShowingResultView.toggle()
                 } label: {
                     ButtonView(text: "占う", color: .blue)
                 }
@@ -94,9 +95,14 @@ struct InputView: View {
                 birthdaySheet(birthDay: $dataController.birthDay)
                     .presentationDetents([ .fraction(0.35)])
             }
+            
             .sheet(isPresented: $isShowingBloodTypeSheet) {
                 bloodTypeSheet(bloodType: $dataController.bloodType)
                     .presentationDetents([ .fraction(0.35)])
+            }
+            
+            .fullScreenCover(isPresented: $isShowingResultView) {
+                ResultView(todofuken: $dataController.result.todofuken, capital: $dataController.result.capital, citizanDay: $dataController.result.citizanDay, hasCoastLine: $dataController.result.hasCoastLine, logoURL: $dataController.result.logoURL, brief: $dataController.result.brief)
             }
             
             .padding(.leading)
