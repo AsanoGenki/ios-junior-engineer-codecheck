@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct birthdaySheet: View {
-    @State var birthday = Date()
+    @Binding var birthDay: Date
     @Environment(\.dismiss) private var dismiss
     var body: some View {
         NavigationView {
             DatePicker(
                 "",
-                selection: $birthday,
+                selection: $birthDay,
                 displayedComponents: [.date]
             )
             .environment(\.locale, Locale(identifier: "ja_JP"))
@@ -30,7 +30,8 @@ struct birthdaySheet: View {
 }
 
 struct birthdaySheet_Previews: PreviewProvider {
+    @State static var birthDay: Date = Date()
     static var previews: some View {
-        birthdaySheet()
+        birthdaySheet(birthDay: $birthDay)
     }
 }

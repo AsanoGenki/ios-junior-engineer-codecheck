@@ -10,6 +10,8 @@ import SwiftUI
 struct InputView: View {
     @ObservedObject var dataController = DataController()
     @State private var editting = false
+    @State var isShowingBirthdaySheet = false
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 28) {
             Text("あなたについて教えてください")
@@ -52,6 +54,10 @@ struct InputView: View {
                                 lineWidth: 2
                             )
                     }
+                    .contentShape(RoundedRectangle(cornerRadius: 12))
+                    .onTapGesture {
+                        self.isShowingBirthdaySheet.toggle()
+                    }
             }
             
             VStack(alignment: .leading) {
@@ -75,8 +81,14 @@ struct InputView: View {
             
             Spacer()
         }
+        .sheet(isPresented: $isShowingBirthdaySheet) {
+            birthdaySheet(birthDay: $dataController.birthDay)
+                .presentationDetents([ .fraction(0.35)])
+                }
+        
         .padding(.leading)
         .padding(.trailing)
+        
     }
 }
 
