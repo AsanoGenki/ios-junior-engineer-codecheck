@@ -12,5 +12,6 @@ class DataController: ObservableObject {
     @Published var userName = ""
     @Published var birthDay = Date()
     @Published var bloodType = "A型"
+    @Published var result: Result = Result()
     
 }
