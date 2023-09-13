@@ -43,12 +43,30 @@ struct InputView: View {
                 Text("誕生日")
                     .font(.title3)
                 Text("2003/02/18")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.all)
+                    .background{
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(
+                                Color(UIColor.separator),
+                                lineWidth: 2
+                            )
+                    }
             }
             
             VStack(alignment: .leading) {
                 Text("血液型")
                     .font(.title3)
                 Text("A型")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.all)
+                    .background{
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(
+                                Color(UIColor.separator),
+                                lineWidth: 2
+                            )
+                    }
             }
             Button("占う") {
                 print("占うが押されました")
