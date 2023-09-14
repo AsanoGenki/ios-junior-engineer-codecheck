@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ResultView: View {
     
+    @State var isShowingStartView = false
+    
     @Binding var todofuken: String
     @Binding var capital: String
     @Binding var citizanDay: Result.MonthDay?
@@ -18,54 +20,69 @@ struct ResultView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                VStack(alignment: .leading) {
-                    Text("今日あなたと")
-                    Text("相性が良い都道府県は...")
-                }
-                .font(.system(size: 28))
-                .fontWeight(.medium)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 30)
-                
-                AsyncImage(url: logoURL, scale: 3) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                } placeholder: {
-                    ProgressView()
-                }
-                .frame(maxWidth: geometry.size.width * 0.7)
-                
-                VStack(alignment: .leading, spacing: 5) {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 40) {
+                    VStack(alignment: .leading) {
+                        Text("今日あなたと")
+                        Text("相性が良い都道府県は...")
+                    }
+                    .font(.system(size: 28))
+                    .fontWeight(.medium)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.top, 30)
                     
-                    Rectangle()
-                        .frame(height: 2)
-                        .foregroundColor(.gray)
-                        .padding(.vertical)
+                    AsyncImage(url: logoURL, scale: 3) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(maxWidth: geometry.size.width * 0.7)
                     
-                    Text(todofuken)
-                        .font(.system(size: 44))
-                    
-                    Text("県庁所在地: \(capital)")
-                        .fontWeight(.medium)
-                    
-                    Text("県民の日: ")
-                        .fontWeight(.medium)
-                    + Text(citizanDay != nil ? "\(citizanDay!.month)月\(citizanDay!.day)日" : "なし")
-                        .fontWeight(.medium)
-                    
-                    Text("海岸線: ")
-                        .fontWeight(.medium)
-                    + Text(hasCoastLine ? "あり" : "なし")
-                        .fontWeight(.medium)
-                    
-                    Text(brief)
-                    
+                    VStack(alignment: .leading, spacing: 5) {
+                        
+                        Rectangle()
+                            .frame(height: 2)
+                            .foregroundColor(.gray)
+                            .padding(.vertical)
+                        
+                        Text(todofuken)
+                            .font(.system(size: 44))
+                        
+                        Text("県庁所在地: \(capital)")
+                            .fontWeight(.medium)
+                        
+                        Text("県民の日: ")
+                            .fontWeight(.medium)
+                        + Text(citizanDay != nil ? "\(citizanDay!.month)月\(citizanDay!.day)日" : "なし")
+                            .fontWeight(.medium)
+                        
+                        Text("海岸線: ")
+                            .fontWeight(.medium)
+                        + Text(hasCoastLine ? "あり" : "なし")
+                            .fontWeight(.medium)
+                        
+                        Text(brief)
+                        
+                    }
+                    Button {
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            isShowingStartView = true
+                        }
+                    } label: {
+                        ButtonView(text: "ホームに戻る", color: .green)
+                    }
                 }
             }
         }
         .padding(.horizontal)
+        
+        .fullScreenCover(isPresented: $isShowingStartView) {
+            StartView()
+        }
     }
 }
 
