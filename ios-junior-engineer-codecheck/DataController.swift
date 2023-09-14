@@ -12,7 +12,11 @@ class DataController: ObservableObject {
     @Published var userName = ""
     @Published var birthDay = Date()
     @Published var bloodType = "A型"
+    @Published var bloodTypeReplace = "a"
     @Published var result: Result = Result()
+    
+    let calendar = Calendar(identifier: .gregorian)
+    let now = Date()
         
     func readFortune() async {
         
@@ -26,17 +30,17 @@ class DataController: ObservableObject {
         request.httpMethod = "POST"
         
         let users: [String: Any] = [
-            "name": "ゆめみん",
+            "name": userName,
             "birthday": [
-                "year": 2000,
-                "month": 1,
-                "day": 27
+                "year": Int(calendar.component(.year, from: birthDay)),
+                "month": Int(calendar.component(.month, from: birthDay)),
+                "day": Int(calendar.component(.day, from: birthDay))
             ],
-            "blood_type": "ab",
+            "blood_type": bloodTypeReplace,
             "today": [
-                "year": 2023,
-                "month": 5,
-                "day": 5
+                "year": Int(calendar.component(.year, from: now)),
+                "month": Int(calendar.component(.month, from: now)),
+                "day": Int(calendar.component(.day, from: now))
             ]
         ]
         

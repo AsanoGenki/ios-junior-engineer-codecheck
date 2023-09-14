@@ -83,6 +83,12 @@ struct InputView: View {
                     
                 }
                 Button {
+                    if dataController.bloodType == "AB型" {
+                        dataController.bloodTypeReplace = "ab"
+                    } else {
+                        dataController.bloodTypeReplace = dataController.bloodType.first!.description.lowercased()
+                    }
+                    
                     Task {
                         await dataController.readFortune()
                     }
