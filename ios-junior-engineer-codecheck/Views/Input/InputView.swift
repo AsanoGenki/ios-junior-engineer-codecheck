@@ -46,7 +46,7 @@ struct InputView: View {
                     .background{
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(
-                                editting ? Color.green : Color(UIColor.separator),
+                                editting && !isShowingBirthdaySheet && !isShowingBloodTypeSheet ? Color.green : Color(UIColor.separator),
                                 lineWidth: 2
                             )
                     }
