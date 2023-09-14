@@ -14,6 +14,8 @@ struct InputView: View {
     @State var isShowingBloodTypeSheet = false
     @State var isShowingResultView = false
     
+    @FocusState var focus:Bool
+    
     var buttonEnable: Bool {
         if !dataController.userName.isEmpty {
             return true
@@ -42,6 +44,7 @@ struct InputView: View {
                         }
                         
                     })
+                    .focused(self.$focus)
                     .padding(.all)
                     .background{
                         RoundedRectangle(cornerRadius: 12)
@@ -67,6 +70,7 @@ struct InputView: View {
                         }
                         .contentShape(RoundedRectangle(cornerRadius: 12))
                         .onTapGesture {
+                            self.focus = false
                             self.isShowingBirthdaySheet.toggle()
                         }
                 }
@@ -86,6 +90,7 @@ struct InputView: View {
                         }
                         .contentShape(RoundedRectangle(cornerRadius: 12))
                         .onTapGesture {
+                            self.focus = false
                             self.isShowingBloodTypeSheet.toggle()
                         }
                     
