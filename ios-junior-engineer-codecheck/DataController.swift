@@ -84,4 +84,11 @@ class DataController: ObservableObject {
         }
         task.resume()
     }
+    
+    func wikiURL(todofuken: String) -> URL {
+        let urlString = "https://ja.wikipedia.org/wiki/\(todofuken)"
+        let encodeUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        return URL(string: encodeUrlString)!
+    }
+    
 }

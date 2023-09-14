@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ResultView: View {
     
+    @ObservedObject var dataController = DataController()
+    
     @State var isShowingStartView = false
     
     @Binding var todofuken: String
@@ -64,6 +66,10 @@ struct ResultView: View {
                             .fontWeight(.medium)
                         
                         Text(brief)
+                        
+                        if let url = dataController.wikiURL(todofuken: todofuken) {
+                                    Link("もっと詳しく読む", destination: url)
+                                }
                         
                     }
                     Button {
