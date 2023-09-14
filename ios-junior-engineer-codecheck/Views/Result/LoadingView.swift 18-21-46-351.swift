@@ -10,10 +10,10 @@ import Lottie
 
 struct LoadingView: View {
     var body: some View {
-        VStack {
+        ZStack {
             ZStack {
                 LottieView()
-                    .frame(width: 300, height: 300)
+                    .frame(width: 200, height: 200)
                 Text("探索中...")
                     .font(.system(size: 20))
                     .fontWeight(.medium)
@@ -30,7 +30,7 @@ struct LoadingView_Previews: PreviewProvider {
 }
 
 struct LottieView: UIViewRepresentable {
-        
+    
     func makeUIView(context: Context) -> UIView {
         let view = LottieAnimationView(name: "car")
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -12,6 +12,7 @@ struct ResultView: View {
     @ObservedObject var dataController = DataController()
     
     @State var isShowingStartView = false
+    @State private var isLoading = true
     
     @Binding var todofuken: String
     @Binding var capital: String
@@ -21,75 +22,92 @@ struct ResultView: View {
     @Binding var brief: String
     
     var body: some View {
-        GeometryReader { geometry in
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 40) {
-                    VStack(alignment: .leading) {
-                        Text("今日あなたと")
-                        Text("相性が良い都道府県は...")
-                    }
-                    .font(.system(size: 28))
-                    .fontWeight(.medium)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top, 30)
-                    
-                    AsyncImage(url: logoURL, scale: 3) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    .frame(maxWidth: geometry.size.width * 0.7)
-                    
-                    VStack(alignment: .leading, spacing: 5) {
-                        
-                        Rectangle()
-                            .frame(height: 2)
-                            .foregroundColor(.gray)
-                            .padding(.vertical)
-                        
-                        Text(todofuken)
-                            .font(.system(size: 44))
-                        
-                        Text("県庁所在地: \(capital)")
-                            .fontWeight(.medium)
-                        
-                        Text("県民の日: ")
-                            .fontWeight(.medium)
-                        + Text(citizanDay != nil ? "\(citizanDay!.month)月\(citizanDay!.day)日" : "なし")
-                            .fontWeight(.medium)
-                        
-                        Text("海岸線: ")
-                            .fontWeight(.medium)
-                        + Text(hasCoastLine ? "あり" : "なし")
-                            .fontWeight(.medium)
-                        
-                        Text(brief)
-                        
-                        if let url = dataController.wikiURL(todofuken: todofuken) {
-                                    Link("もっと詳しく読む", destination: url)
-                                }
-                        
-                    }
-                    Button {
-                        var transaction = Transaction()
-                        transaction.disablesAnimations = true
-                        withTransaction(transaction) {
-                            isShowingStartView = true
+        if isLoading {
+            ZStack {
+                Rectangle()
+                    .fill(Color.black).opacity(0.3)
+                    .edgesIgnoringSafeArea(.all)
+                LoadingView()
+                    .frame(width: 170, height: 170)
+                    .background(Color.white.cornerRadius(20))
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            isLoading = false
                         }
-                    } label: {
-                        ButtonView(text: "ホームに戻る", color: .green)
+                    }
+            }
+        } else {
+            GeometryReader { geometry in
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 40) {
+                        VStack(alignment: .leading) {
+                            Text("今日あなたと")
+                            Text("相性が良い都道府県は...")
+                        }
+                        .font(.system(size: 28))
+                        .fontWeight(.medium)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.top, 30)
+                        
+                        AsyncImage(url: logoURL, scale: 3) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(maxWidth: geometry.size.width * 0.7)
+                        
+                        VStack(alignment: .leading, spacing: 5) {
+                            
+                            Rectangle()
+                                .frame(height: 2)
+                                .foregroundColor(.gray)
+                                .padding(.vertical)
+                            
+                            Text(todofuken)
+                                .font(.system(size: 44))
+                            
+                            Text("県庁所在地: \(capital)")
+                                .fontWeight(.medium)
+                            
+                            Text("県民の日: ")
+                                .fontWeight(.medium)
+                            + Text(citizanDay != nil ? "\(citizanDay!.month)月\(citizanDay!.day)日" : "なし")
+                                .fontWeight(.medium)
+                            
+                            Text("海岸線: ")
+                                .fontWeight(.medium)
+                            + Text(hasCoastLine ? "あり" : "なし")
+                                .fontWeight(.medium)
+                            
+                            Text(brief)
+                            
+                            if let url = dataController.wikiURL(todofuken: todofuken) {
+                                Link("もっと詳しく読む", destination: url)
+                            }
+                            
+                        }
+                        Button {
+                            var transaction = Transaction()
+                            transaction.disablesAnimations = true
+                            withTransaction(transaction) {
+                                isShowingStartView = true
+                            }
+                        } label: {
+                            ButtonView(text: "ホームに戻る", color: .green)
+                        }
                     }
                 }
             }
-        }
-        .padding(.horizontal)
-        
-        .fullScreenCover(isPresented: $isShowingStartView) {
-            StartView()
+            .padding(.horizontal)
+            
+            .fullScreenCover(isPresented: $isShowingStartView) {
+                StartView()
+            }
         }
     }
+    
 }
 
 struct ResultView_Previews: PreviewProvider {
