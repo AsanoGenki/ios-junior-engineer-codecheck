@@ -106,7 +106,12 @@ struct InputView: View {
                         await dataController.readFortune()
                     }
                     
-                    isShowingResultView.toggle()
+                    var transaction = Transaction()
+                    transaction.disablesAnimations = true
+                    withTransaction(transaction) {
+                        isShowingResultView = true
+                    }
+                    
                 } label: {
                     ButtonView(text: "占う", color: .blue)
                         .saturation(buttonEnable ? 1 : 0)
