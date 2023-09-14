@@ -14,6 +14,14 @@ struct InputView: View {
     @State var isShowingBloodTypeSheet = false
     @State var isShowingResultView = false
     
+    var buttonEnable: Bool {
+        if !dataController.userName.isEmpty {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     var body: some View {
         GeometryReader { _ in
             VStack(alignment: .leading, spacing: 28) {
@@ -96,8 +104,10 @@ struct InputView: View {
                     isShowingResultView.toggle()
                 } label: {
                     ButtonView(text: "占う", color: .blue)
+                        .saturation(buttonEnable ? 1 : 0)
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
+                .disabled(!buttonEnable)
                 
                 Spacer()
             }
