@@ -112,7 +112,7 @@ struct InputView: View {
             }
             
             .fullScreenCover(isPresented: $isShowingResultView) {
-                ResultView(todofuken: $dataController.result.todofuken, capital: $dataController.result.capital, citizanDay: $dataController.result.citizanDay, hasCoastLine: $dataController.result.hasCoastLine, logoURL: $dataController.result.logoURL, brief: $dataController.result.brief)
+                ResultView(todofuken: $dataController.result.name, capital: $dataController.result.capital, citizanDay: $dataController.result.citizen_day, hasCoastLine: $dataController.result.has_coast_line, logoURL: $dataController.result.logo_url, brief: $dataController.result.brief)
             }
             
             .padding(.leading)
