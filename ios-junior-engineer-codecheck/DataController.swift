@@ -66,6 +66,10 @@ class DataController: ObservableObject {
             do {
                 let responseObject = try JSONDecoder().decode(Result.self, from: data)
                 
+                DispatchQueue.main.async {
+                    self.result = responseObject
+                }
+                
                 print(responseObject)
                 
             } catch {
