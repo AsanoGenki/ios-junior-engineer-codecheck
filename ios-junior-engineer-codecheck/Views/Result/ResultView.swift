@@ -33,6 +33,7 @@ struct ResultView: View {
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                             isLoading = false
+                            dataController.textSpeech(todofuken)
                         }
                     }
             }

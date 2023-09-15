@@ -24,18 +24,33 @@ class DataController: ObservableObject {
     private let clickSound2 = try! AVAudioPlayer(data: NSDataAsset(name: "SE_click_small")!.data)
     private let BGM = try! AVAudioPlayer(data: NSDataAsset(name: "BGM_Sweet_Peach")!.data)
     
+    let synthesizer = AVSpeechSynthesizer()
+    
     func playClickNormal(){
+        clickSound.volume = 0.7
         clickSound.play()
-        }
+    }
     
     func playClickSmall() {
+        clickSound2.volume = 0.7
         clickSound2.play()
     }
     
     func playBGM() {
-        BGM.volume = 0.25
+        BGM.volume = 0.05
         BGM.numberOfLoops = -1
         BGM.play()
+    }
+    
+    func textSpeech(_ text: String) {
+
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
+        utterance.rate = 0.45
+        utterance.volume = 1
+        utterance.pitchMultiplier = 1.1
+        self.synthesizer.speak(utterance)
+        
     }
     
     
@@ -123,7 +138,7 @@ class DataController: ObservableObject {
     }
     // View からのリクエストで、保存するデータ に指定値を持つように RealmItem 作成(を依頼する)
     func addRealmItem(userName: String, birthday: Date, bloodType: String, todofuken: String, logoURL: String, createDate: Date) {
-
+        
         // Model へ作成を依頼する
         model.addRealmItem(userName: userName, birthday: birthday, bloodType: bloodType, todofuken: todofuken, logoURL: logoURL, createDate: createDate)
     }
