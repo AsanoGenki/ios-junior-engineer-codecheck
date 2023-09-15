@@ -32,6 +32,15 @@ struct StartView: View {
                     ButtonView(text: "はじめる", color: .blue)
                 }
             }
+            .navigationBarItems(
+                trailing: NavigationLink {
+                    RecordView()
+                        .navigationBarTitle("履歴", displayMode: .inline)
+                } label: {
+                    Image(systemName: "timer")
+                        .font(.system(size: 18))
+                }
+            )
         }
     }
 }
