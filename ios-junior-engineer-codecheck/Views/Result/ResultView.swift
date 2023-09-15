@@ -89,6 +89,7 @@ struct ResultView: View {
                             
                         }
                         Button {
+                            dataController.playClickNormal()
                             var transaction = Transaction()
                             transaction.disablesAnimations = true
                             withTransaction(transaction) {

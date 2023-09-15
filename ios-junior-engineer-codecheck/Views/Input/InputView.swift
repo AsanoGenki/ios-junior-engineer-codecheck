@@ -96,6 +96,7 @@ struct InputView: View {
                     
                 }
                 Button {
+                    dataController.playClickNormal()
                     if dataController.bloodType == "AB型" {
                         dataController.bloodTypeReplace = "ab"
                     } else {

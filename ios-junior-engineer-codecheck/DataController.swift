@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealmSwift
+import AVFoundation
 
 class DataController: ObservableObject {
     
@@ -18,6 +19,17 @@ class DataController: ObservableObject {
     
     let calendar = Calendar(identifier: .gregorian)
     let now = Date()
+    
+    private let clickSound = try!  AVAudioPlayer(data: NSDataAsset(name: "SE_click_normal")!.data)
+    private let clickSound2 = try! AVAudioPlayer(data: NSDataAsset(name: "SE_click_small")!.data)
+    
+    func playClickNormal(){
+        clickSound.play()
+        }
+    
+    func playClickSmall() {
+        clickSound2.play()
+    }
     
     func readFortune() async {
         
