@@ -22,6 +22,7 @@ class DataController: ObservableObject {
     
     private let clickSound = try!  AVAudioPlayer(data: NSDataAsset(name: "SE_click_normal")!.data)
     private let clickSound2 = try! AVAudioPlayer(data: NSDataAsset(name: "SE_click_small")!.data)
+    private let BGM = try! AVAudioPlayer(data: NSDataAsset(name: "BGM_Sweet_Peach")!.data)
     
     func playClickNormal(){
         clickSound.play()
@@ -30,6 +31,13 @@ class DataController: ObservableObject {
     func playClickSmall() {
         clickSound2.play()
     }
+    
+    func playBGM() {
+        BGM.volume = 0.25
+        BGM.numberOfLoops = -1
+        BGM.play()
+    }
+    
     
     func readFortune() async {
         
