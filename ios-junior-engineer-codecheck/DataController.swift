@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 class DataController: ObservableObject {
     
@@ -17,7 +18,7 @@ class DataController: ObservableObject {
     
     let calendar = Calendar(identifier: .gregorian)
     let now = Date()
-        
+    
     func readFortune() async {
         
         guard let url = URL(string: "https://yumemi-ios-junior-engineer-codecheck.app.swift.cloud/my_fortune") else {
@@ -89,6 +90,19 @@ class DataController: ObservableObject {
         let urlString = "https://ja.wikipedia.org/wiki/\(todofuken)"
         let encodeUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         return URL(string: encodeUrlString)!
+    }
+    
+    
+    @Published var model: RealmModel = RealmModel()
+    // Model から受け取る Results<RealmItem> を (View へ)渡す
+    var realmItems: Results<RealmItem> {
+        model.items
+    }
+    // View からのリクエストで、保存するデータ に指定値を持つように RealmItem 作成(を依頼する)
+    func addRealmItem(userName: String, birthday: Date, bloodType: String, todofuken: String, logoURL: String, createDate: Date) {
+
+        // Model へ作成を依頼する
+        model.addRealmItem(userName: userName, birthday: birthday, bloodType: bloodType, todofuken: todofuken, logoURL: logoURL, createDate: createDate)
     }
     
 }
