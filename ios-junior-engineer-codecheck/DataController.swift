@@ -71,7 +71,10 @@ class DataController: ObservableObject {
                     self.result = responseObject
                 }
                 
+                self.addRealmItem(userName: self.userName, birthday: self.birthDay, bloodType: self.bloodType, todofuken: responseObject.name, logoURL: responseObject.logo_url.absoluteString, createDate: self.now)
+                
                 print(responseObject)
+                print(self.realmItems)
                 
             } catch {
                 print(error)
