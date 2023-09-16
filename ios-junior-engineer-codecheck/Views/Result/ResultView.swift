@@ -38,71 +38,79 @@ struct ResultView: View {
                     }
             }
         } else {
-            GeometryReader { geometry in
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 40) {
+            NavigationStack {
+                GeometryReader { geometry in
+                    List {
                         VStack(alignment: .leading) {
                             Text("今日あなたと")
                             Text("相性が良い都道府県は...")
-                        }
-                        .font(.system(size: 28))
-                        .fontWeight(.medium)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.top, 30)
-                        
-                        AsyncImage(url: logoURL, scale: 3) { image in
-                            image
-                                .resizable()
-                                .scaledToFit()
-                        } placeholder: {
-                            ProgressView()
-                        }
-                        .frame(maxWidth: geometry.size.width * 0.7)
-                        
-                        VStack(alignment: .leading, spacing: 5) {
                             
-                            Rectangle()
-                                .frame(height: 2)
-                                .foregroundColor(.gray)
-                                .padding(.vertical)
+                        }.font(.system(size: 28))
+                            .fontWeight(.medium)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.top, 30)
+                            .padding(.bottom, 10)
+                            .listRowSeparator(.hidden)
+                        
+                        VStack(alignment: .center) {
                             
                             Text(todofuken)
-                                .font(.system(size: 44))
-                            
-                            Text("県庁所在地: \(capital)")
+                                .font(.system(size: 32))
                                 .fontWeight(.medium)
+//                                .padding(.bottom, -5)
+                            
+                            AsyncImage(url: logoURL, scale: 3) { image in
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            .frame(maxWidth: geometry.size.width * 0.6)
+                            
+                        }.frame(maxWidth: .infinity)
+                            .listRowSeparator(.hidden)
+                        
+                        Section("基本情報") {
+                            Text("県庁所在地: \(capital)")
                             
                             Text("県民の日: ")
-                                .fontWeight(.medium)
                             + Text(citizanDay != nil ? "\(citizanDay!.month)月\(citizanDay!.day)日" : "なし")
-                                .fontWeight(.medium)
                             
                             Text("海岸線: ")
-                                .fontWeight(.medium)
                             + Text(hasCoastLine ? "あり" : "なし")
-                                .fontWeight(.medium)
                             
-                            Text(brief)
-                            
-                            if let url = dataController.wikiURL(todofuken: todofuken) {
-                                Link("もっと詳しく読む", destination: url)
+                            NavigationLink {
+                                WikipediaView(todofuken: $todofuken, brief: $brief)
+                                    .navigationBarTitle("Wikipedia", displayMode: .inline)
+                            } label: {
+                                Text("Wikipedia")
+                                    .foregroundColor(.blue)
                             }
                             
                         }
-                        Button {
-                            dataController.playClickNormal()
-                            var transaction = Transaction()
-                            transaction.disablesAnimations = true
-                            withTransaction(transaction) {
-                                isShowingStartView = true
-                            }
-                        } label: {
-                            ButtonView(text: "ホームに戻る", color: .green)
-                        }
-                    }
+                        .font(.system(size: 20))
+                        .fontWeight(.medium)
+                        
+                        
+                            Button {
+                                dataController.playClickNormal()
+                                
+                                var transaction = Transaction()
+                                transaction.disablesAnimations = true
+                                withTransaction(transaction) {
+                                    isShowingStartView = true
+                                }
+                            } label: {
+                                ButtonView(text: "ホームに戻る", color: .green)
+                            }.listRowSeparator(.hidden)
+                            .buttonStyle(PlainButtonStyle())
+                            .frame(maxWidth: .infinity)
+                            .padding(.top, 20)
+                        
+                    }.listStyle(PlainListStyle())
                 }
             }
-            .padding(.horizontal)
             
             .fullScreenCover(isPresented: $isShowingStartView) {
                 StartView()
