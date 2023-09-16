@@ -10,6 +10,7 @@ import SwiftUI
 struct ResultView: View {
     
     @ObservedObject var dataController = DataController()
+    @ObservedObject var prefectureAPILoader = ExternalPrefectureAPILoader()
     
     @State var isShowingStartView = false
     
@@ -20,6 +21,12 @@ struct ResultView: View {
     @Binding var hasCoastLine: Bool
     @Binding var logoURL: URL
     @Binding var brief: String
+    
+    @State var lastUpdatedInt = 0
+    @State var lastUpdatedStr = ""
+    
+    let del4: Set<Character> = ["県", "府", "都"]
+    let del4_kyoto: Set<Character> = ["県", "府"]
     
     var body: some View {
         if isLoading {
@@ -70,7 +77,8 @@ struct ResultView: View {
                         }.frame(maxWidth: .infinity)
                             .listRowSeparator(.hidden)
                         
-                        Section("基本情報") {
+                        Section("基本情報 (2019年)") {
+                            Text("人口: \(formatNumber(number:Double((prefectureData(todofuken: todofuken)?.population ?? 0))))")
                             Text("県庁所在地: \(capital)")
                             
                             Text("県民の日: ")
@@ -83,7 +91,7 @@ struct ResultView: View {
                                 WikipediaView(todofuken: $todofuken, brief: $brief)
                                     .navigationBarTitle("Wikipedia", displayMode: .inline)
                             } label: {
-                                Text("Wikipedia")
+                                Text("特徴")
                                     .foregroundColor(.blue)
                             }
                             
@@ -91,18 +99,39 @@ struct ResultView: View {
                         .font(.system(size: 20))
                         .fontWeight(.medium)
                         
-                        
-                            Button {
-                                dataController.playClickNormal()
-                                
-                                var transaction = Transaction()
-                                transaction.disablesAnimations = true
-                                withTransaction(transaction) {
-                                    isShowingStartView = true
+                        Section("COVID-19: (\(lastUpdatedStr))") {
+                            
+                            Text("感染した人数: \(formatNumber(number:Double((prefectureData(todofuken: todofuken)?.cases ?? 0))))")
+                                .onAppear {
+                                    lastUpdatedInt = prefectureData(todofuken: todofuken)?.last_updated.cases_date ?? 20220905
+                                    
+                                    lastUpdatedStr = intToDateString(int: lastUpdatedInt)
+                                    
                                 }
-                            } label: {
-                                ButtonView(text: "ホームに戻る", color: .green)
-                            }.listRowSeparator(.hidden)
+                            
+                            Text("入院した人数: \(formatNumber(number:Double((prefectureData(todofuken: todofuken)?.hospitalize ?? 0))))")
+                            
+                            Text("死者数: \(formatNumber(number:Double((prefectureData(todofuken: todofuken)?.deaths ?? 0))))")
+                            
+                            Text("PCR検査した人数: \(formatNumber(number:Double((prefectureData(todofuken: todofuken)?.pcr ?? 0))))")
+                            
+                            
+                        }
+                        .font(.system(size: 20))
+                        .fontWeight(.medium)
+                        
+                        
+                        Button {
+                            dataController.playClickNormal()
+                            
+                            var transaction = Transaction()
+                            transaction.disablesAnimations = true
+                            withTransaction(transaction) {
+                                isShowingStartView = true
+                            }
+                        } label: {
+                            ButtonView(text: "ホームに戻る", color: .green)
+                        }.listRowSeparator(.hidden)
                             .buttonStyle(PlainButtonStyle())
                             .frame(maxWidth: .infinity)
                             .padding(.top, 20)
@@ -117,6 +146,58 @@ struct ResultView: View {
         }
     }
     
+    func prefectureData(todofuken: String) -> LocationData? {
+        
+        if todofuken != "京都府" {
+            
+            let foundData = prefectureAPILoader.comments.first(where: { $0.name_ja == todofuken.filter { !del4.contains($0) } })
+            return foundData
+            
+        } else {
+            
+            let foundData = prefectureAPILoader.comments.first(where: { $0.name_ja == todofuken.filter { !del4_kyoto.contains($0) } })
+            return foundData
+            
+        }
+    }
+    
+    func intToDateString(int: Int) -> String {
+        let str = String(int)
+        
+        let year = str.prefix(4)
+        let day = str.suffix(2)
+        
+        let startIndex = str.index(str.startIndex, offsetBy: 4)
+        let endIndex = str.index(str.endIndex,offsetBy: -3)
+        
+        let month = str[startIndex...endIndex]
+        
+        let lastUpdated = "\(year)年\(month)月\(day)日 時点"
+        
+        return lastUpdated
+    }
+    
+    //↓ChatGPTで作成
+    //プロンプト: SwiftUIで100000を10.0万人と表記するにはどうすれば良いですか
+    func formatNumber(number: Double) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = 1 // 小数点以下の桁数を1桁に設定
+        
+        // 数値が10000以上の場合、「万」を付け加える
+        if number >= 10000 {
+            numberFormatter.positiveSuffix = "万人"
+            return numberFormatter.string(from: NSNumber(value: number / 10000.0)) ?? ""
+        }
+        
+        else {
+            
+            let formattedNumber = numberFormatter.string(from: NSNumber(value: number)) ?? ""
+            return formattedNumber + "人"
+            
+        }
+        
+    }
 }
 
 struct ResultView_Previews: PreviewProvider {
@@ -131,5 +212,6 @@ struct ResultView_Previews: PreviewProvider {
     
     static var previews: some View {
         ResultView(isLoading: $isLoading, todofuken: $todofuken, capital: $capital, citizanDay: $citizenDay, hasCoastLine: $hasCoastLine, logoURL: $logoURL, brief: $brief)
+        
     }
 }
