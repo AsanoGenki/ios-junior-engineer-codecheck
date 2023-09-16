@@ -27,6 +27,7 @@
 		4A9F51172AB1388200F02893 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F51162AB1388200F02893 /* StartView.swift */; };
 		4A9F51192AB1388400F02893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A9F51182AB1388400F02893 /* Assets.xcassets */; };
 		4A9F511D2AB1388400F02893 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A9F511C2AB1388400F02893 /* Preview Assets.xcassets */; };
+		4AF991B12AB5572400C53CBE /* BGMPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF991B02AB5572400C53CBE /* BGMPlayerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		4A9F51182AB1388400F02893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A9F511A2AB1388400F02893 /* ios_junior_engineer_codecheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ios_junior_engineer_codecheck.entitlements; sourceTree = "<group>"; };
 		4A9F511C2AB1388400F02893 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4AF991B02AB5572400C53CBE /* BGMPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMPlayerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				4A02FE832AB171DB008B2FEC /* Views */,
 				4A02FE782AB154CF008B2FEC /* DataController.swift */,
+				4AF991B02AB5572400C53CBE /* BGMPlayerManager.swift */,
 				4A7FCF682AB40DF200DC2F66 /* Realm */,
 				4A9F51142AB1388200F02893 /* ios_junior_engineer_codecheckApp.swift */,
 				4A9F51182AB1388400F02893 /* Assets.xcassets */,
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A02FE882AB18CC1008B2FEC /* Result.swift in Sources */,
+				4AF991B12AB5572400C53CBE /* BGMPlayerManager.swift in Sources */,
 				4A7FCF652AB3D3E000DC2F66 /* RealmModel.swift in Sources */,
 				4A7FCF632AB3D38500DC2F66 /* RealmItem.swift in Sources */,
 				4A0916D22AB44BB500FE305B /* SettingView.swift in Sources */,

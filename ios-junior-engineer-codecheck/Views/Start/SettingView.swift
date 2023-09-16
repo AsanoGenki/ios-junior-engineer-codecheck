@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct SettingView: View {
-    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var bgmPlayerManager: BGMPlayerManager
     
-    @State private var BGM = true
-    @State private var soundEffect = true
-    @State private var voice = true
+    @AppStorage("soundEffect") var isPlayingSE = true
+    @AppStorage("voice") var isPlayingVoice = true
+    
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationView {
             VStack(spacing: 40) {
-                Toggle("BGM", isOn: $BGM)
+                
+                Toggle("BGM", isOn: $bgmPlayerManager.isPlayingBGM)
                     .padding(.top, 30)
                 
-                Toggle("効果音", isOn: $soundEffect)
+                Toggle("効果音", isOn: $isPlayingSE)
                 
-                Toggle("音声", isOn: $voice)
+                Toggle("音声", isOn: $isPlayingVoice)
                 
                 Spacer()
             }

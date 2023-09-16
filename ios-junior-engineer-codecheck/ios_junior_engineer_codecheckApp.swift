@@ -9,22 +9,13 @@ import SwiftUI
 
 @main
 struct ios_junior_engineer_codecheckApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    @StateObject var bgmPlayerManager = BGMPlayerManager.shared
     
     var body: some Scene {
         WindowGroup {
             StartView()
+                .environmentObject(bgmPlayerManager)
         }
-    }
-}
-
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    @ObservedObject var dataController = DataController()
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
-        dataController.playBGM()
-        
-        return true
     }
 }

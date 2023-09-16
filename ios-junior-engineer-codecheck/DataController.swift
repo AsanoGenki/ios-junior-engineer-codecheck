@@ -16,40 +16,49 @@ class DataController: ObservableObject {
     @Published var bloodType = "A型"
     @Published var bloodTypeReplace = "a"
     @Published var result: Result = Result()
+
+    @AppStorage("soundEffect") var isPlayingSE = true
+    @AppStorage("voice") var isPlayingVoice = true
     
     let calendar = Calendar(identifier: .gregorian)
     let now = Date()
     
     private let clickSound = try!  AVAudioPlayer(data: NSDataAsset(name: "SE_click_normal")!.data)
     private let clickSound2 = try! AVAudioPlayer(data: NSDataAsset(name: "SE_click_small")!.data)
-    private let BGM = try! AVAudioPlayer(data: NSDataAsset(name: "BGM_Sweet_Peach")!.data)
     
     let synthesizer = AVSpeechSynthesizer()
     
+    
     func playClickNormal(){
-        clickSound.volume = 0.7
-        clickSound.play()
+        if isPlayingSE {
+            clickSound.volume = 0.7
+            clickSound.play()
+        } else {
+            return
+        }
     }
     
     func playClickSmall() {
-        clickSound2.volume = 0.7
-        clickSound2.play()
-    }
-    
-    func playBGM() {
-        BGM.volume = 0.05
-        BGM.numberOfLoops = -1
-        BGM.play()
+        if isPlayingSE {
+            clickSound2.volume = 0.7
+            clickSound2.play()
+        } else {
+            return
+        }
     }
     
     func textSpeech(_ text: String) {
 
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
-        utterance.rate = 0.45
-        utterance.volume = 1
-        utterance.pitchMultiplier = 1.1
-        self.synthesizer.speak(utterance)
+        if isPlayingVoice {
+            let utterance = AVSpeechUtterance(string: text)
+            utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
+            utterance.rate = 0.45
+            utterance.volume = 1
+            utterance.pitchMultiplier = 1.1
+            self.synthesizer.speak(utterance)
+        } else {
+            return
+        }
         
     }
     
