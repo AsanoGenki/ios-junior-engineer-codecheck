@@ -18,6 +18,8 @@
 		4A02FE9B2AB3085B008B2FEC /* car.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A02FE9A2AB3085B008B2FEC /* car.json */; };
 		4A02FE9F2AB308FC008B2FEC /* LoadingView.swift 18-21-46-351.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02FE9E2AB308FC008B2FEC /* LoadingView.swift 18-21-46-351.swift */; };
 		4A0916D22AB44BB500FE305B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0916D12AB44BB500FE305B /* SettingView.swift */; };
+		4A0B7F932AB5C0B400399686 /* ExternalPrefectureAPIItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B7F922AB5C0B400399686 /* ExternalPrefectureAPIItem.swift */; };
+		4A0B7F952AB5C0F000399686 /* ExternalPrefectureAPILoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B7F942AB5C0F000399686 /* ExternalPrefectureAPILoader.swift */; };
 		4A0BF18C2AB59F6B00D26EEF /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0BF18B2AB59F6B00D26EEF /* WikipediaView.swift */; };
 		4A7FCF5F2AB34AFF00DC2F66 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4A7FCF5E2AB34AFF00DC2F66 /* Realm */; };
 		4A7FCF612AB34AFF00DC2F66 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A7FCF602AB34AFF00DC2F66 /* RealmSwift */; };
@@ -42,6 +44,8 @@
 		4A02FE9A2AB3085B008B2FEC /* car.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car.json; sourceTree = "<group>"; };
 		4A02FE9E2AB308FC008B2FEC /* LoadingView.swift 18-21-46-351.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoadingView.swift 18-21-46-351.swift"; sourceTree = "<group>"; };
 		4A0916D12AB44BB500FE305B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		4A0B7F922AB5C0B400399686 /* ExternalPrefectureAPIItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalPrefectureAPIItem.swift; sourceTree = "<group>"; };
+		4A0B7F942AB5C0F000399686 /* ExternalPrefectureAPILoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalPrefectureAPILoader.swift; sourceTree = "<group>"; };
 		4A0BF18B2AB59F6B00D26EEF /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
 		4A7FCF622AB3D38500DC2F66 /* RealmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmItem.swift; sourceTree = "<group>"; };
 		4A7FCF642AB3D3E000DC2F66 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				4A02FE832AB171DB008B2FEC /* Views */,
 				4A02FE782AB154CF008B2FEC /* DataController.swift */,
 				4AF991B02AB5572400C53CBE /* BGMPlayerManager.swift */,
+				4A0B7F922AB5C0B400399686 /* ExternalPrefectureAPIItem.swift */,
+				4A0B7F942AB5C0F000399686 /* ExternalPrefectureAPILoader.swift */,
 				4A7FCF682AB40DF200DC2F66 /* Realm */,
 				4A9F51142AB1388200F02893 /* ios_junior_engineer_codecheckApp.swift */,
 				4A9F51182AB1388400F02893 /* Assets.xcassets */,
@@ -242,12 +248,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A0B7F932AB5C0B400399686 /* ExternalPrefectureAPIItem.swift in Sources */,
 				4A0BF18C2AB59F6B00D26EEF /* WikipediaView.swift in Sources */,
 				4A02FE882AB18CC1008B2FEC /* Result.swift in Sources */,
 				4AF991B12AB5572400C53CBE /* BGMPlayerManager.swift in Sources */,
 				4A7FCF652AB3D3E000DC2F66 /* RealmModel.swift in Sources */,
 				4A7FCF632AB3D38500DC2F66 /* RealmItem.swift in Sources */,
 				4A0916D22AB44BB500FE305B /* SettingView.swift in Sources */,
+				4A0B7F952AB5C0F000399686 /* ExternalPrefectureAPILoader.swift in Sources */,
 				4A02FE9F2AB308FC008B2FEC /* LoadingView.swift 18-21-46-351.swift in Sources */,
 				4A02FE772AB14AE4008B2FEC /* InputView.swift in Sources */,
 				4A02FE822AB16F88008B2FEC /* ButtonView.swift in Sources */,

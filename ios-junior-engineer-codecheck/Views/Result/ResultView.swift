@@ -57,7 +57,6 @@ struct ResultView: View {
                             Text(todofuken)
                                 .font(.system(size: 32))
                                 .fontWeight(.medium)
-//                                .padding(.bottom, -5)
                             
                             AsyncImage(url: logoURL, scale: 3) { image in
                                 image
