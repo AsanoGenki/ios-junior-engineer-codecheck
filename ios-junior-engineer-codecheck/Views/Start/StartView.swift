@@ -11,6 +11,7 @@ struct StartView: View {
     @ObservedObject var dataController = DataController()
     @State private var isShowingInputView = false
     @State private var isShowingRecordView = false
+    @State private var isShowingSettingView = false
     
     var body: some View {
         NavigationStack {
@@ -45,7 +46,21 @@ struct StartView: View {
                         .navigationBarTitle("履歴", displayMode: .inline)
                 })
                 
+                .sheet(isPresented: $isShowingSettingView) {
+                            SettingView()
+                        .presentationDetents([ .fraction(0.4)])
+                        }
+                
                 .navigationBarItems(
+                    
+                    leading: Button {
+                        dataController.playClickSmall()
+                        isShowingSettingView.toggle()
+                    } label: {
+                        Image(systemName: "gearshape")
+                            .font(.system(size: 18))
+                    },
+                    
                     trailing: Button {
                         dataController.playClickSmall()
                         isShowingRecordView.toggle()

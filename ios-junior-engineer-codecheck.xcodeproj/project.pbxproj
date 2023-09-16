@@ -17,6 +17,7 @@
 		4A02FE952AB2FF03008B2FEC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4A02FE942AB2FF03008B2FEC /* Lottie */; };
 		4A02FE9B2AB3085B008B2FEC /* car.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A02FE9A2AB3085B008B2FEC /* car.json */; };
 		4A02FE9F2AB308FC008B2FEC /* LoadingView.swift 18-21-46-351.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02FE9E2AB308FC008B2FEC /* LoadingView.swift 18-21-46-351.swift */; };
+		4A0916D22AB44BB500FE305B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0916D12AB44BB500FE305B /* SettingView.swift */; };
 		4A7FCF5F2AB34AFF00DC2F66 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4A7FCF5E2AB34AFF00DC2F66 /* Realm */; };
 		4A7FCF612AB34AFF00DC2F66 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A7FCF602AB34AFF00DC2F66 /* RealmSwift */; };
 		4A7FCF632AB3D38500DC2F66 /* RealmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7FCF622AB3D38500DC2F66 /* RealmItem.swift */; };
@@ -38,6 +39,7 @@
 		4A02FE872AB18CC1008B2FEC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		4A02FE9A2AB3085B008B2FEC /* car.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car.json; sourceTree = "<group>"; };
 		4A02FE9E2AB308FC008B2FEC /* LoadingView.swift 18-21-46-351.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoadingView.swift 18-21-46-351.swift"; sourceTree = "<group>"; };
+		4A0916D12AB44BB500FE305B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		4A7FCF622AB3D38500DC2F66 /* RealmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmItem.swift; sourceTree = "<group>"; };
 		4A7FCF642AB3D3E000DC2F66 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		4A7FCF6B2AB4198D00DC2F66 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				4A9F51162AB1388200F02893 /* StartView.swift */,
 				4A7FCF6B2AB4198D00DC2F66 /* RecordView.swift */,
+				4A0916D12AB44BB500FE305B /* SettingView.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				4A02FE882AB18CC1008B2FEC /* Result.swift in Sources */,
 				4A7FCF652AB3D3E000DC2F66 /* RealmModel.swift in Sources */,
 				4A7FCF632AB3D38500DC2F66 /* RealmItem.swift in Sources */,
+				4A0916D22AB44BB500FE305B /* SettingView.swift in Sources */,
 				4A02FE9F2AB308FC008B2FEC /* LoadingView.swift 18-21-46-351.swift in Sources */,
 				4A02FE772AB14AE4008B2FEC /* InputView.swift in Sources */,
 				4A02FE822AB16F88008B2FEC /* ButtonView.swift in Sources */,
