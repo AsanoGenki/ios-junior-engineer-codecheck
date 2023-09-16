@@ -72,6 +72,8 @@ class DataController: ObservableObject {
         
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("v1", forHTTPHeaderField: "API-Version")
+
         request.httpMethod = "POST"
         
         let users: [String: Any] = [
