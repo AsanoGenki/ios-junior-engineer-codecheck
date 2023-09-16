@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct InputView: View {
     @ObservedObject var dataController = DataController()
@@ -32,8 +33,12 @@ struct InputView: View {
                     .fontWeight(.medium)
                     .padding(.top, 50)
                 VStack(alignment: .leading) {
-                    Text("名前")
-                        .font(.title3)
+                    HStack {
+                        Text("名前")
+                            .font(.title3)
+                        Spacer()
+                        Text("\(dataController.userName.count) / 30")
+                    }
                     TextField("山田太郎",
                               text: $dataController.userName,
                               onEditingChanged: { begin in
@@ -44,6 +49,12 @@ struct InputView: View {
                         }
                         
                     })
+                    .onReceive(Just(dataController.userName)) { _ in
+                        //最大文字数を超えたら、最大文字数までの文字列を代入する
+                        if dataController.userName.count > 30 {
+                            dataController.userName = String(dataController.userName.prefix(30))
+                        }
+                    }
                     .focused(self.$focus)
                     .padding(.all)
                     .background{
