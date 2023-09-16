@@ -14,6 +14,7 @@ struct InputView: View {
     @State var isShowingBirthdaySheet = false
     @State var isShowingBloodTypeSheet = false
     @State var isShowingResultView = false
+    @State var isLoading = true
     
     @FocusState var focus:Bool
     
@@ -144,7 +145,7 @@ struct InputView: View {
             }
             
             .fullScreenCover(isPresented: $isShowingResultView) {
-                ResultView(todofuken: $dataController.result.name, capital: $dataController.result.capital, citizanDay: $dataController.result.citizen_day, hasCoastLine: $dataController.result.has_coast_line, logoURL: $dataController.result.logo_url, brief: $dataController.result.brief)
+                ResultView(isLoading: $isLoading, todofuken: $dataController.result.name, capital: $dataController.result.capital, citizanDay: $dataController.result.citizen_day, hasCoastLine: $dataController.result.has_coast_line, logoURL: $dataController.result.logo_url, brief: $dataController.result.brief)
             }
             
             .padding(.leading)

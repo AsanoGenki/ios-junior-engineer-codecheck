@@ -12,8 +12,8 @@ struct ResultView: View {
     @ObservedObject var dataController = DataController()
     
     @State var isShowingStartView = false
-    @State private var isLoading = true
     
+    @Binding var isLoading: Bool
     @Binding var todofuken: String
     @Binding var capital: String
     @Binding var citizanDay: Result.MonthDay?
@@ -120,8 +120,9 @@ struct ResultView_Previews: PreviewProvider {
     @State static var hasCoastLine = true
     @State static var logoURL = URL(string:"https://japan-map.com/wp-content/uploads/toyama.png")!
     @State static var brief = "富山県（とやまけん）は、日本の中部地方に位置する県。県庁所在地は富山市。\n中部地方の日本海側、新潟県を含めた場合の北陸地方のほぼ中央にある。\n※出典: フリー百科事典『ウィキペディア（Wikipedia）』"
+    @State static var isLoading = false
     
     static var previews: some View {
-        ResultView(todofuken: $todofuken, capital: $capital, citizanDay: $citizenDay, hasCoastLine: $hasCoastLine, logoURL: $logoURL, brief: $brief)
+        ResultView(isLoading: $isLoading, todofuken: $todofuken, capital: $capital, citizanDay: $citizenDay, hasCoastLine: $hasCoastLine, logoURL: $logoURL, brief: $brief)
     }
 }
