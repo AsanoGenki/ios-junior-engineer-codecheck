@@ -51,6 +51,7 @@
 		4A9F511A2AB1388400F02893 /* ios_junior_engineer_codecheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ios_junior_engineer_codecheck.entitlements; sourceTree = "<group>"; };
 		4A9F511C2AB1388400F02893 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AF991B02AB5572400C53CBE /* BGMPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMPlayerManager.swift; sourceTree = "<group>"; };
+		4AF991B22AB57A8900C53CBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +138,7 @@
 		4A9F51132AB1388200F02893 /* ios-junior-engineer-codecheck */ = {
 			isa = PBXGroup;
 			children = (
+				4AF991B22AB57A8900C53CBE /* Info.plist */,
 				4A02FE832AB171DB008B2FEC /* Views */,
 				4A02FE782AB154CF008B2FEC /* DataController.swift */,
 				4AF991B02AB5572400C53CBE /* BGMPlayerManager.swift */,
@@ -380,6 +382,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-junior-engineer-codecheck/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -419,6 +422,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-junior-engineer-codecheck/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
