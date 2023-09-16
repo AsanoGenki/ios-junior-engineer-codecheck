@@ -43,7 +43,7 @@ struct StartView: View {
                 })
                 .navigationDestination(isPresented: $isShowingRecordView, destination: {
                     RecordView()
-                        .navigationBarTitle("履歴", displayMode: .inline)
+                    
                 })
                 
                 .sheet(isPresented: $isShowingSettingView) {

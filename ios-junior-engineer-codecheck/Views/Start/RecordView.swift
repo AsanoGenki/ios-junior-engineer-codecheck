@@ -12,7 +12,7 @@ struct RecordView: View {
     @ObservedObject var dataController = DataController()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(dataController.realmItems.freeze().reversed(), id: \.id) { item in
                     HStack {
@@ -51,6 +51,7 @@ struct RecordView: View {
                     }
                 }
             }
+            .navigationBarTitle("履歴", displayMode: .inline)
             .listStyle(.plain)
 
         }
