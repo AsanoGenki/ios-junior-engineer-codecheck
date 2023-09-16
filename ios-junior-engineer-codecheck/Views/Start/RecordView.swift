@@ -23,6 +23,9 @@ struct RecordView: View {
                                 Image(systemName: "birthday.cake")
                                 Text(dateToString(dateString: item.birthday)!)
                                     .padding(.trailing, 5)
+                                Image(systemName: "drop")
+                                Text(item.bloodType)
+                                    .padding(.trailing, 5)
                                 Image(systemName: "calendar")
                                 Text(dateToString(dateString: item.createDate)!.suffix(5))
                             }
