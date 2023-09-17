@@ -15,12 +15,14 @@ struct WikipediaView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text(brief)
                 .padding(.top, 20)
+                .lineSpacing(7)
             
             if let url = wikiURL(todofuken: todofuken) {
                         Link("もっと詳しく読む", destination: url)
                     }
             Spacer()
         }
+        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
         .padding(.horizontal)
     }
     

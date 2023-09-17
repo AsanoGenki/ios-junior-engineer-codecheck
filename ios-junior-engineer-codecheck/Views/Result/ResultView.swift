@@ -48,12 +48,13 @@ struct ResultView: View {
             NavigationStack {
                 GeometryReader { geometry in
                     List {
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 5) {
                             Text("今日あなたと")
                             Text("相性が良い都道府県は...")
                             
-                        }.font(.system(size: 28))
-                            .fontWeight(.medium)
+                        }
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 28))
+                        
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.top, 30)
                             .padding(.bottom, 10)
@@ -62,8 +63,7 @@ struct ResultView: View {
                         VStack(alignment: .center) {
                             
                             Text(todofuken)
-                                .font(.system(size: 32))
-                                .fontWeight(.medium)
+                                .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 30))
                             
                             AsyncImage(url: logoURL, scale: 3) { image in
                                 image
@@ -89,17 +89,21 @@ struct ResultView: View {
                             
                             NavigationLink {
                                 WikipediaView(todofuken: $todofuken, brief: $brief)
-                                    .navigationBarTitle("Wikipedia", displayMode: .inline)
+                                    .toolbar {
+                                        ToolbarItem(placement: .principal) {
+                                            Text("特徴")
+                                                .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                                        }
+                                    }
                             } label: {
                                 Text("特徴")
                                     .foregroundColor(.blue)
                             }
                             
                         }
-                        .font(.system(size: 20))
-                        .fontWeight(.medium)
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
                         
-                        Section("COVID-19: (\(lastUpdatedStr))") {
+                        Section("COVID-19 (\(lastUpdatedStr))") {
                             
                             Text("感染した人数: \(formatNumber(number:Double((prefectureData(todofuken: todofuken)?.cases ?? 0))))")
                                 .onAppear {
@@ -117,8 +121,7 @@ struct ResultView: View {
                             
                             
                         }
-                        .font(.system(size: 20))
-                        .fontWeight(.medium)
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
                         
                         
                         Button {

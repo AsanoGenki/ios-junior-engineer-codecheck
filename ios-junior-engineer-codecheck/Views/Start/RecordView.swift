@@ -18,7 +18,8 @@ struct RecordView: View {
                     HStack {
                         VStack (alignment: .leading, spacing: 5) {
                             Text(item.userName)
-                                .font(.title2)
+                                .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 20))
+                                .padding(.bottom, 10)
                             HStack(spacing: 0) {
                                 Image(systemName: "birthday.cake")
                                 Text(dateToString(dateString: item.birthday)!)
@@ -29,6 +30,7 @@ struct RecordView: View {
                                 Image(systemName: "calendar")
                                 Text(dateToString(dateString: item.createDate)!.suffix(5))
                             }
+                            .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 16))
                         }
                         Spacer()
                         ZStack {
@@ -40,7 +42,7 @@ struct RecordView: View {
                                 ProgressView()
                             }.frame(height: 90)
                             Text(item.todofuken)
-                                .font(.system(size: 12))
+                                .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 12))
                         }
                     }
                 }
@@ -54,9 +56,16 @@ struct RecordView: View {
                     }
                 }
             }
-            .navigationBarTitle("履歴", displayMode: .inline)
+            .navigationBarTitle("", displayMode: .inline)
             .listStyle(.plain)
-
+            
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("履歴")
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                }
+                
+            }
         }
     }
     func dateToString(dateString: Date) -> String? {

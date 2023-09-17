@@ -14,15 +14,24 @@ struct bloodTypeSheet: View {
         NavigationView {
             Picker(selection: $bloodType, label: Text("血液型")) {
                 Text("A型").tag("A型")
+                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                
                 Text("B型").tag("B型")
+                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                
                 Text("AB型").tag("AB型")
+                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                
                 Text("O型").tag("O型")
+                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                
             }
             .pickerStyle(WheelPickerStyle())
             .navigationBarItems(
                 trailing: Button("OK") {
                     dismiss()
                 }
+                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
             )
         }
     }

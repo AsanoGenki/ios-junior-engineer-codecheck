@@ -15,7 +15,7 @@ struct InputView: View {
     @State var isShowingBloodTypeSheet = false
     @State var isShowingResultView = false
     @State var isLoading = true
-    
+
     @FocusState var focus:Bool
     
     var buttonEnable: Bool {
@@ -30,16 +30,20 @@ struct InputView: View {
         GeometryReader { _ in
             VStack(alignment: .leading, spacing: 28) {
                 Text("あなたについて教えてください")
-                    .font(.system(size: 24))
+                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 26))
                     .fontWeight(.medium)
                     .padding(.top, 50)
-                VStack(alignment: .leading) {
+                
+                VStack(alignment: .leading, spacing: 18) {
                     HStack {
                         Text("名前")
-                            .font(.title3)
+                        
                         Spacer()
+                        
                         Text("\(dataController.userName.count) / 30")
                     }
+                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 20))
+                    
                     TextField("山田太郎",
                               text: $dataController.userName,
                               onEditingChanged: { begin in
@@ -56,20 +60,23 @@ struct InputView: View {
                             dataController.userName = String(dataController.userName.prefix(30))
                         }
                     }
+                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                    
                     .focused(self.$focus)
                     .padding(.all)
                     .background{
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(
                                 editting && !isShowingBirthdaySheet && !isShowingBloodTypeSheet ? Color.green : Color(UIColor.separator),
-                                lineWidth: 2
+                                lineWidth: 3
                             )
                     }
                 }
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 18) {
                     Text("誕生日")
-                        .font(.title3)
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 20))
+                    
                     Text(dateToString(dateString: dataController.birthDay)!)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.all)
@@ -77,9 +84,11 @@ struct InputView: View {
                             RoundedRectangle(cornerRadius: 12)
                                 .stroke(
                                     isShowingBirthdaySheet ? Color.green : Color(UIColor.separator),
-                                    lineWidth: 2
+                                    lineWidth: 3
                                 )
                         }
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                    
                         .contentShape(RoundedRectangle(cornerRadius: 12))
                         .onTapGesture {
                             self.focus = false
@@ -87,17 +96,20 @@ struct InputView: View {
                         }
                 }
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 18) {
                     Text("血液型")
-                        .font(.title3)
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 20))
+                    
                     Text(dataController.bloodType)
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                    
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.all)
                         .background{
                             RoundedRectangle(cornerRadius: 12)
                                 .stroke(
                                     isShowingBloodTypeSheet ? Color.green : Color(UIColor.separator),
-                                    lineWidth: 2
+                                    lineWidth: 3
                                 )
                         }
                         .contentShape(RoundedRectangle(cornerRadius: 12))
@@ -107,6 +119,7 @@ struct InputView: View {
                         }
                     
                 }
+                
                 Button {
                     dataController.playClickNormal()
                     if dataController.bloodType == "AB型" {

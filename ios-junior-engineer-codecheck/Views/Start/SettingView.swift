@@ -28,15 +28,23 @@ struct SettingView: View {
                 
                 Spacer()
             }
-            .font(.system(size: 20))
-            .fontWeight(.medium)
+            .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 20))
             .padding(.horizontal, 40)
-            .navigationBarTitle("設定", displayMode: .inline)
+            .navigationBarTitle("", displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
                 dismiss()
             }, label: {
                 Text("OK")
+                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
             }))
+            
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("設定")
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                }
+            }
+            
         }
     }
 }

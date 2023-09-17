@@ -20,10 +20,12 @@ struct birthdaySheet: View {
             .environment(\.locale, Locale(identifier: "ja_JP"))
             .datePickerStyle(.wheel)
             .labelsHidden()
+            
             .navigationBarItems(
                 trailing: Button("OK") {
                     dismiss()
                 }
+                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
             )
         }
     }
