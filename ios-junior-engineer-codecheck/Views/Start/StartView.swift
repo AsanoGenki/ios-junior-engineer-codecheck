@@ -16,14 +16,21 @@ struct StartView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("都道府県")
-                    .font(.system(size: 54))
-                    .fontWeight(.semibold)
-                    .foregroundColor(.green)
-                Text("相性占い")
-                    .font(.system(size: 54))
-                    .fontWeight(.semibold)
-                    .foregroundColor(.green)
+                VStack(spacing: 20) {
+                    Text("都道府県")
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 64))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.green)
+                    Text("相性占い")
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 64))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.green)
+                    Text("〜今日相性が良い都道府県を占おう！〜")
+                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.green)
+                }
+                
                 
                 Image("nihonchizu")
                     .resizable()
@@ -47,9 +54,9 @@ struct StartView: View {
                 })
                 
                 .sheet(isPresented: $isShowingSettingView) {
-                            SettingView()
+                    SettingView()
                         .presentationDetents([ .fraction(0.4)])
-                        }
+                }
                 
                 .navigationBarItems(
                     
