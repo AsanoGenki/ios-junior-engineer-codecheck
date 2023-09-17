@@ -44,7 +44,7 @@ struct StartView: View {
                         dataController.playClickNormal()
                         isShowingInputView.toggle()
                     } label: {
-                        ButtonView(text: "はじめる", color: .blue)
+                        ButtonView(text: "はじめる", color: .green, backColor: Color("costomYellow"))
                     }
                     
                     .navigationDestination(isPresented: $isShowingInputView, destination: {

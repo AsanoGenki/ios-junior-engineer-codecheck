@@ -126,7 +126,7 @@ struct InputView: View {
                     }
                     
                 } label: {
-                    ButtonView(text: "占う", color: .blue)
+                    ButtonView(text: "占う", color: .green, backColor: Color("costomYellow"))
                         .saturation(buttonEnable ? 1 : 0)
                 }
                 .frame(maxWidth: .infinity, alignment: .center)

@@ -130,7 +130,7 @@ struct ResultView: View {
                                 isShowingStartView = true
                             }
                         } label: {
-                            ButtonView(text: "ホームに戻る", color: .green)
+                            ButtonView(text: "ホームに戻る", color: .green, backColor: .yellow)
                         }.listRowSeparator(.hidden)
                             .buttonStyle(PlainButtonStyle())
                             .frame(maxWidth: .infinity)
