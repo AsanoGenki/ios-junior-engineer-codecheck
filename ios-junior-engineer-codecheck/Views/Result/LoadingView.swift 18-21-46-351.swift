@@ -15,7 +15,7 @@ struct LoadingView: View {
                 LottieView()
                     .frame(width: 200, height: 200)
                 Text("探索中...")
-                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                    .font(.custom("RoundedMplus1c-Medium", size: 18))
                     .padding(.top, 120)
             }
         }

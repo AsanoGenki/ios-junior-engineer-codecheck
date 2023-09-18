@@ -25,7 +25,7 @@ struct birthdaySheet: View {
                 trailing: Button("OK") {
                     dismiss()
                 }
-                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                    .font(.custom("RoundedMplus1c-Medium", size: 18))
             )
         }
     }

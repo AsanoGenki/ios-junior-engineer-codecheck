@@ -30,7 +30,7 @@ struct InputView: View {
         GeometryReader { _ in
             VStack(alignment: .leading, spacing: 28) {
                 Text("あなたについて教えてください")
-                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 26))
+                    .font(.custom("RoundedMplus1c-Bold", size: 23))
                     .fontWeight(.medium)
                     .padding(.top, 50)
                 
@@ -42,7 +42,7 @@ struct InputView: View {
                         
                         Text("\(dataController.userName.count) / 30")
                     }
-                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 20))
+                    .font(.custom("RoundedMplus1c-Bold", size: 20))
                     
                     TextField("山田太郎",
                               text: $dataController.userName,
@@ -60,7 +60,7 @@ struct InputView: View {
                             dataController.userName = String(dataController.userName.prefix(30))
                         }
                     }
-                    .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                    .font(.custom("RoundedMplus1c-Medium", size: 18))
                     
                     .focused(self.$focus)
                     .padding(.all)
@@ -75,7 +75,7 @@ struct InputView: View {
                 
                 VStack(alignment: .leading, spacing: 18) {
                     Text("誕生日")
-                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 20))
+                        .font(.custom("RoundedMplus1c-Bold", size: 20))
                     
                     Text(dateToString(dateString: dataController.birthDay)!)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -87,7 +87,7 @@ struct InputView: View {
                                     lineWidth: 3
                                 )
                         }
-                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                        .font(.custom("RoundedMplus1c-Medium", size: 18))
                     
                         .contentShape(RoundedRectangle(cornerRadius: 12))
                         .onTapGesture {
@@ -98,10 +98,10 @@ struct InputView: View {
                 
                 VStack(alignment: .leading, spacing: 18) {
                     Text("血液型")
-                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 20))
+                        .font(.custom("RoundedMplus1c-Bold", size: 20))
                     
                     Text(dataController.bloodType)
-                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                        .font(.custom("RoundedMplus1c-Medium", size: 18))
                     
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.all)

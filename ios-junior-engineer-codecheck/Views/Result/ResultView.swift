@@ -53,7 +53,7 @@ struct ResultView: View {
                             Text("相性が良い都道府県は...")
                             
                         }
-                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 28))
+                        .font(.custom("RoundedMplus1c-Bold", size: 28))
                         
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.top, 30)
@@ -63,7 +63,7 @@ struct ResultView: View {
                         VStack(alignment: .center) {
                             
                             Text(todofuken)
-                                .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 30))
+                                .font(.custom("RoundedMplus1c-Bold", size: 30))
                             
                             AsyncImage(url: logoURL, scale: 3) { image in
                                 image
@@ -92,7 +92,7 @@ struct ResultView: View {
                                     .toolbar {
                                         ToolbarItem(placement: .principal) {
                                             Text("特徴")
-                                                .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                                                .font(.custom("RoundedMplus1c-Bold", size: 18))
                                         }
                                     }
                             } label: {
@@ -101,7 +101,7 @@ struct ResultView: View {
                             }
                             
                         }
-                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                        .font(.custom("RoundedMplus1c-Medium", size: 18))
                         
                         Section("COVID-19 (\(lastUpdatedStr))") {
                             
@@ -121,7 +121,7 @@ struct ResultView: View {
                             
                             
                         }
-                        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+                        .font(.custom("RoundedMplus1c-Medium", size: 18))
                         
                         
                         Button {

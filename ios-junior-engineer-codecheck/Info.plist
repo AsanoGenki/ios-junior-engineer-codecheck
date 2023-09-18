@@ -9,6 +9,10 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Corporate-Logo-Rounded-Bold-ver3.otf</string>
+		<string>MPLUSRounded1c-ExtraBold.ttf</string>
+		<string>MPLUSRounded1c-Bold.ttf</string>
+		<string>MPLUSRounded1c-Medium.ttf</string>
+		<string>MPLUSRounded1c-Regular.ttf</string>
 	</array>
 </dict>
 </plist>

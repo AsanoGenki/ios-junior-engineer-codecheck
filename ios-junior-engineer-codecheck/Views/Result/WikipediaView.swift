@@ -22,7 +22,7 @@ struct WikipediaView: View {
                     }
             Spacer()
         }
-        .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 18))
+        .font(.custom("RoundedMplus1c-Medium", size: 18))
         .padding(.horizontal)
     }
     
