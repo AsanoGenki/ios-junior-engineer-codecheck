@@ -17,7 +17,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4AF75A9E2AB88642002E805A"
+               BlueprintIdentifier = "4ABEC4BD2AB88C8E00905257"
                BuildableName = "ios-junior-engineer-codecheckUITests.xctest"
                BlueprintName = "ios-junior-engineer-codecheckUITests"
                ReferencedContainer = "container:ios-junior-engineer-codecheck.xcodeproj">

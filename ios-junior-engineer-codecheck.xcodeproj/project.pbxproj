@@ -21,7 +21,11 @@
 		4A0B7F932AB5C0B400399686 /* ExternalPrefectureAPIItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B7F922AB5C0B400399686 /* ExternalPrefectureAPIItem.swift */; };
 		4A0B7F952AB5C0F000399686 /* ExternalPrefectureAPILoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B7F942AB5C0F000399686 /* ExternalPrefectureAPILoader.swift */; };
 		4A0BF18C2AB59F6B00D26EEF /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0BF18B2AB59F6B00D26EEF /* WikipediaView.swift */; };
+		4A0C69AC2AB9626500711B38 /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0C69AB2AB9626500711B38 /* RealmTests.swift */; };
 		4A344AB22AB692E9007DA163 /* Corporate-Logo-Rounded-Bold-ver3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A344AB12AB692E9007DA163 /* Corporate-Logo-Rounded-Bold-ver3.otf */; };
+		4A4B5CB22AB95EF000E6E17A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4A4B5CB12AB95EF000E6E17A /* Realm */; };
+		4A4B5CB42AB95EF000E6E17A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A4B5CB32AB95EF000E6E17A /* RealmSwift */; };
+		4A4B5CB62AB95F2500E6E17A /* AssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5CB52AB95F2500E6E17A /* AssetTests.swift */; };
 		4A7FCF5F2AB34AFF00DC2F66 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4A7FCF5E2AB34AFF00DC2F66 /* Realm */; };
 		4A7FCF612AB34AFF00DC2F66 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A7FCF602AB34AFF00DC2F66 /* RealmSwift */; };
 		4A7FCF632AB3D38500DC2F66 /* RealmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7FCF622AB3D38500DC2F66 /* RealmItem.swift */; };
@@ -33,7 +37,6 @@
 		4A9F511D2AB1388400F02893 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A9F511C2AB1388400F02893 /* Preview Assets.xcassets */; };
 		4ABEC4C32AB88C8E00905257 /* ios_junior_engineer_codecheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABEC4C22AB88C8E00905257 /* ios_junior_engineer_codecheckUITestsLaunchTests.swift */; };
 		4ADB46AC2AB9308D00E62C39 /* ios_junior_engineer_codecheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABEC4C02AB88C8E00905257 /* ios_junior_engineer_codecheckUITests.swift */; };
-		4ADF281A2AB890DE005A5F9A /* ios_junior_engineer_codecheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF28192AB890DE005A5F9A /* ios_junior_engineer_codecheckTests.swift */; };
 		4AE84E612AB7EE8E00E94E96 /* MPLUSRounded1c-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE84E5E2AB7EE8E00E94E96 /* MPLUSRounded1c-Regular.ttf */; };
 		4AE84E622AB7EE8E00E94E96 /* MPLUSRounded1c-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE84E5F2AB7EE8E00E94E96 /* MPLUSRounded1c-Medium.ttf */; };
 		4AE84E632AB7EE8E00E94E96 /* MPLUSRounded1c-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE84E602AB7EE8E00E94E96 /* MPLUSRounded1c-Bold.ttf */; };
@@ -72,7 +75,10 @@
 		4A0B7F922AB5C0B400399686 /* ExternalPrefectureAPIItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalPrefectureAPIItem.swift; sourceTree = "<group>"; };
 		4A0B7F942AB5C0F000399686 /* ExternalPrefectureAPILoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalPrefectureAPILoader.swift; sourceTree = "<group>"; };
 		4A0BF18B2AB59F6B00D26EEF /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
+		4A0C69AB2AB9626500711B38 /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
 		4A344AB12AB692E9007DA163 /* Corporate-Logo-Rounded-Bold-ver3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Corporate-Logo-Rounded-Bold-ver3.otf"; sourceTree = "<group>"; };
+		4A4B5CB52AB95F2500E6E17A /* AssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTests.swift; sourceTree = "<group>"; };
+		4A4B5CB72AB9600700E6E17A /* ios-junior-engineer-codecheck.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ios-junior-engineer-codecheck.xctestplan"; sourceTree = "<group>"; };
 		4A7FCF622AB3D38500DC2F66 /* RealmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmItem.swift; sourceTree = "<group>"; };
 		4A7FCF642AB3D3E000DC2F66 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		4A7FCF6B2AB4198D00DC2F66 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
@@ -86,7 +92,6 @@
 		4ABEC4C02AB88C8E00905257 /* ios_junior_engineer_codecheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ios_junior_engineer_codecheckUITests.swift; path = ../ios_junior_engineer_codecheckUITests.swift; sourceTree = "<group>"; };
 		4ABEC4C22AB88C8E00905257 /* ios_junior_engineer_codecheckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ios_junior_engineer_codecheckUITestsLaunchTests.swift; path = ../ios_junior_engineer_codecheckUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4ADF28172AB890DD005A5F9A /* ios-junior-engineer-codecheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-junior-engineer-codecheckTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4ADF28192AB890DE005A5F9A /* ios_junior_engineer_codecheckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_junior_engineer_codecheckTests.swift; sourceTree = "<group>"; };
 		4AE84E5E2AB7EE8E00E94E96 /* MPLUSRounded1c-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Regular.ttf"; sourceTree = "<group>"; };
 		4AE84E5F2AB7EE8E00E94E96 /* MPLUSRounded1c-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Medium.ttf"; sourceTree = "<group>"; };
 		4AE84E602AB7EE8E00E94E96 /* MPLUSRounded1c-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Bold.ttf"; sourceTree = "<group>"; };
@@ -117,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A4B5CB42AB95EF000E6E17A /* RealmSwift in Frameworks */,
+				4A4B5CB22AB95EF000E6E17A /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +254,9 @@
 		4ADF28182AB890DE005A5F9A /* ios-junior-engineer-codecheckTests */ = {
 			isa = PBXGroup;
 			children = (
-				4ADF28192AB890DE005A5F9A /* ios_junior_engineer_codecheckTests.swift */,
+				4A4B5CB52AB95F2500E6E17A /* AssetTests.swift */,
+				4A0C69AB2AB9626500711B38 /* RealmTests.swift */,
+				4A4B5CB72AB9600700E6E17A /* ios-junior-engineer-codecheck.xctestplan */,
 			);
 			path = "ios-junior-engineer-codecheckTests";
 			sourceTree = "<group>";
@@ -309,6 +318,10 @@
 				4ADF281C2AB890DE005A5F9A /* PBXTargetDependency */,
 			);
 			name = "ios-junior-engineer-codecheckTests";
+			packageProductDependencies = (
+				4A4B5CB12AB95EF000E6E17A /* Realm */,
+				4A4B5CB32AB95EF000E6E17A /* RealmSwift */,
+			);
 			productName = "ios-junior-engineer-codecheckTests";
 			productReference = 4ADF28172AB890DD005A5F9A /* ios-junior-engineer-codecheckTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -431,7 +444,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ADF281A2AB890DE005A5F9A /* ios_junior_engineer_codecheckTests.swift in Sources */,
+				4A0C69AC2AB9626500711B38 /* RealmTests.swift in Sources */,
+				4A4B5CB62AB95F2500E6E17A /* AssetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,6 +805,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4A02FE932AB2FF03008B2FEC /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		4A4B5CB12AB95EF000E6E17A /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A7FCF5D2AB34AFF00DC2F66 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		4A4B5CB32AB95EF000E6E17A /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A7FCF5D2AB34AFF00DC2F66 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 		4A7FCF5E2AB34AFF00DC2F66 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;

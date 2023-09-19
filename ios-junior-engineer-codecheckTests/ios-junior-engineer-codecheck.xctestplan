@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "54761183-4BBA-4CB2-BCFF-906AD02FB1A0",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ios-junior-engineer-codecheck.xcodeproj",
+      "identifier" : "4A9F51102AB1388200F02893",
+      "name" : "ios-junior-engineer-codecheck"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ios-junior-engineer-codecheck.xcodeproj",
+        "identifier" : "4ABEC4BD2AB88C8E00905257",
+        "name" : "ios-junior-engineer-codecheckUITests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ios-junior-engineer-codecheck.xcodeproj",
+        "identifier" : "4ADF28162AB890DD005A5F9A",
+        "name" : "ios-junior-engineer-codecheckTests"
+      }
+    }
+  ],
+  "version" : 1
+}
