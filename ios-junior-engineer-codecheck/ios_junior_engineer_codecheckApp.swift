@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct ios_junior_engineer_codecheckApp: App {
+    
+    @StateObject var bgmPlayerManager = BGMPlayerManager.shared
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
+                .environmentObject(bgmPlayerManager)
+            //起動時にBGMの処理
         }
     }
 }

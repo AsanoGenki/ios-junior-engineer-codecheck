@@ -4,10 +4,64 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GettingStarted (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>GettingStarted (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>GettingStarted (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>ios-junior-engineer-codecheck.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>ios-junior-engineer-codecheckUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4A9F51102AB1388200F02893</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4ABEC4BD2AB88C8E00905257</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4AC2ADD52AB7C95300714B8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4AC2ADE22AB7CB9200714B8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4AF75A9E2AB88642002E805A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
