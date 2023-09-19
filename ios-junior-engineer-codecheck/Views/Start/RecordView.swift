@@ -56,6 +56,7 @@ struct RecordView: View {
                     }
                 }
             }
+            .accessibility(identifier: "RecordList")
             .navigationBarTitle("", displayMode: .inline)
             .listStyle(.plain)
             

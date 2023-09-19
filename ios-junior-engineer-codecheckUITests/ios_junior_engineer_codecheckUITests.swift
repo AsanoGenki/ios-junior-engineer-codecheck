@@ -26,6 +26,23 @@ final class ios_junior_engineer_codecheckUITests: XCTestCase {
         XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 1).exists)
     }
     
+    //設定画面のテスト
+    func testSettingView() throws {
+        let bgmToggle = app.switches["BGM"]
+        
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        
+        let isToggleOn = bgmToggle.value as? String == "1"
+        
+        if !isToggleOn {
+            bgmToggle.switches.firstMatch.tap()
+        }
+        
+        XCTAssertEqual(bgmToggle.value as! String, "1")
+        
+        app.buttons["closeSettingView"].tap()
+    }
+    
     //"はじめる"ボタンのテスト
     func testStartButton() throws {
         let startButton = app.buttons["startButton"]
