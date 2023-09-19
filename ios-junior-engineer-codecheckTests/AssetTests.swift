@@ -19,6 +19,7 @@ final class AssetTests: XCTestCase {
         }
     }
     
+    //コードが期待するすべての音声ファイルがアセットカタログに含まれていることを確認する
     func testAudioExsists() {
         let allAudio = ["BGM_Sweet_Peach", "SE_click_normal", "SE_click_small"]
         

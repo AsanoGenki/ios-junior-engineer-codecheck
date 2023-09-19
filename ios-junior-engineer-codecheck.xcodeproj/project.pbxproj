@@ -157,12 +157,8 @@
 				4A02FE7D2AB16326008B2FEC /* Input */,
 				4A02FE862AB1870F008B2FEC /* Result */,
 				4A02FE812AB16F88008B2FEC /* ButtonView.swift */,
-				4A344AB12AB692E9007DA163 /* Corporate-Logo-Rounded-Bold-ver3.otf */,
-				4AE84E642AB7EEA600E94E96 /* MPLUSRounded1c-ExtraBold.ttf */,
-				4AE84E602AB7EE8E00E94E96 /* MPLUSRounded1c-Bold.ttf */,
-				4AE84E5F2AB7EE8E00E94E96 /* MPLUSRounded1c-Medium.ttf */,
-				4AE84E5E2AB7EE8E00E94E96 /* MPLUSRounded1c-Regular.ttf */,
-				4A02FE9A2AB3085B008B2FEC /* car.json */,
+				4AF45E8A2AB9728000793435 /* Fonts */,
+				4AF45E8B2AB9729600793435 /* Lottie */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,10 +216,7 @@
 			children = (
 				4AF991B22AB57A8900C53CBE /* Info.plist */,
 				4A02FE832AB171DB008B2FEC /* Views */,
-				4A02FE782AB154CF008B2FEC /* DataController.swift */,
-				4AF991B02AB5572400C53CBE /* BGMPlayerManager.swift */,
-				4A0B7F922AB5C0B400399686 /* ExternalPrefectureAPIItem.swift */,
-				4A0B7F942AB5C0F000399686 /* ExternalPrefectureAPILoader.swift */,
+				4AF45E8C2AB9729C00793435 /* Data */,
 				4A7FCF682AB40DF200DC2F66 /* Realm */,
 				4A9F51142AB1388200F02893 /* ios_junior_engineer_codecheckApp.swift */,
 				4A9F51182AB1388400F02893 /* Assets.xcassets */,
@@ -259,6 +252,37 @@
 				4A4B5CB72AB9600700E6E17A /* ios-junior-engineer-codecheck.xctestplan */,
 			);
 			path = "ios-junior-engineer-codecheckTests";
+			sourceTree = "<group>";
+		};
+		4AF45E8A2AB9728000793435 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4A344AB12AB692E9007DA163 /* Corporate-Logo-Rounded-Bold-ver3.otf */,
+				4AE84E642AB7EEA600E94E96 /* MPLUSRounded1c-ExtraBold.ttf */,
+				4AE84E602AB7EE8E00E94E96 /* MPLUSRounded1c-Bold.ttf */,
+				4AE84E5F2AB7EE8E00E94E96 /* MPLUSRounded1c-Medium.ttf */,
+				4AE84E5E2AB7EE8E00E94E96 /* MPLUSRounded1c-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4AF45E8B2AB9729600793435 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				4A02FE9A2AB3085B008B2FEC /* car.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		4AF45E8C2AB9729C00793435 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4A02FE782AB154CF008B2FEC /* DataController.swift */,
+				4AF991B02AB5572400C53CBE /* BGMPlayerManager.swift */,
+				4A0B7F922AB5C0B400399686 /* ExternalPrefectureAPIItem.swift */,
+				4A0B7F942AB5C0F000399686 /* ExternalPrefectureAPILoader.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
