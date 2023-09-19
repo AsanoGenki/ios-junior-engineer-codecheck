@@ -22,6 +22,7 @@ struct StartView: View {
                     VStack(spacing: 20) {
                         Text("都道府県")
                             .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 64))
+                            .accessibility(identifier: "Title")
 
                         Text("相性占い")
                             .font(.custom("Corporate-Logo-Rounded-Bold-ver3", size: 64))
@@ -39,6 +40,7 @@ struct StartView: View {
                         .scaledToFit()
                         .frame(width: UIScreen.main.bounds.width * 0.8)
                         .padding(.top, 20)
+                        .accessibility(identifier: "nihonchizuImage")
                     
                     Button {
                         dataController.playClickNormal()
@@ -46,6 +48,7 @@ struct StartView: View {
                     } label: {
                         ButtonView(text: "はじめる", color: .green, backColor: Color("costomYellow"))
                     }
+                    .accessibility(identifier: "startButton")
                     
                     .navigationDestination(isPresented: $isShowingInputView, destination: {
                         InputView()

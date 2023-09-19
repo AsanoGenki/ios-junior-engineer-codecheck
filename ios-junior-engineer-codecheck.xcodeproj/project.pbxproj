@@ -31,8 +31,8 @@
 		4A9F51172AB1388200F02893 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F51162AB1388200F02893 /* StartView.swift */; };
 		4A9F51192AB1388400F02893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A9F51182AB1388400F02893 /* Assets.xcassets */; };
 		4A9F511D2AB1388400F02893 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A9F511C2AB1388400F02893 /* Preview Assets.xcassets */; };
-		4ABEC4C12AB88C8E00905257 /* ios_junior_engineer_codecheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABEC4C02AB88C8E00905257 /* ios_junior_engineer_codecheckUITests.swift */; };
 		4ABEC4C32AB88C8E00905257 /* ios_junior_engineer_codecheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABEC4C22AB88C8E00905257 /* ios_junior_engineer_codecheckUITestsLaunchTests.swift */; };
+		4ADB46AC2AB9308D00E62C39 /* ios_junior_engineer_codecheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABEC4C02AB88C8E00905257 /* ios_junior_engineer_codecheckUITests.swift */; };
 		4ADF281A2AB890DE005A5F9A /* ios_junior_engineer_codecheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF28192AB890DE005A5F9A /* ios_junior_engineer_codecheckTests.swift */; };
 		4AE84E612AB7EE8E00E94E96 /* MPLUSRounded1c-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE84E5E2AB7EE8E00E94E96 /* MPLUSRounded1c-Regular.ttf */; };
 		4AE84E622AB7EE8E00E94E96 /* MPLUSRounded1c-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE84E5F2AB7EE8E00E94E96 /* MPLUSRounded1c-Medium.ttf */; };
@@ -423,7 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ABEC4C32AB88C8E00905257 /* ios_junior_engineer_codecheckUITestsLaunchTests.swift in Sources */,
-				4ABEC4C12AB88C8E00905257 /* ios_junior_engineer_codecheckUITests.swift in Sources */,
+				4ADB46AC2AB9308D00E62C39 /* ios_junior_engineer_codecheckUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

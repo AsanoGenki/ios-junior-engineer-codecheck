@@ -17,6 +17,7 @@ struct LoadingView: View {
                 Text("探索中...")
                     .font(.custom("RoundedMplus1c-Medium", size: 18))
                     .padding(.top, 120)
+                    .accessibility(identifier: "探索中")
             }
         }
     }

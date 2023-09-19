@@ -33,6 +33,7 @@ struct InputView: View {
                     .font(.custom("RoundedMplus1c-Bold", size: 23))
                     .fontWeight(.medium)
                     .padding(.top, 50)
+                    .accessibility(identifier: "あなたについて教えてください")
                 
                 VStack(alignment: .leading, spacing: 18) {
                     HStack {
@@ -54,6 +55,7 @@ struct InputView: View {
                         }
                         
                     })
+                    .accessibility(identifier: "nameTextField")
                     .onReceive(Just(dataController.userName)) { _ in
                         //最大文字数を超えたら、最大文字数までの文字列を代入する
                         if dataController.userName.count > 30 {
@@ -144,6 +146,7 @@ struct InputView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
                 .disabled(!buttonEnable)
+                .accessibility(identifier: "readFortuneButton")
                 
                 Spacer()
             }

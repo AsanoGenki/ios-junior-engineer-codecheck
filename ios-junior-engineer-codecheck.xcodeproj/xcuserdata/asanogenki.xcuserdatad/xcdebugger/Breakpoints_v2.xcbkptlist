@@ -39,16 +39,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9269EF5D-5D85-44CC-8FC8-FCDC9F2511B3"
+            uuid = "151C1E8E-F209-4868-AAE5-8833DA237FB9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-junior-engineer-codecheckUITests/ios_junior_engineer_codecheckUITests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "testExample()"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "testReadFortuneButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

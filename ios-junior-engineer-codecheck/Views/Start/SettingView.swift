@@ -20,8 +20,9 @@ struct SettingView: View {
             VStack(spacing: 40) {
                 
                 Toggle("BGM", isOn: $bgmPlayerManager.isPlayingBGM)
+                    .accessibility(identifier: "BGM")
                     .padding(.top, 30)
-                
+                    
                 Toggle("効果音", isOn: $isPlayingSE)
                 
                 Toggle("音声", isOn: $isPlayingVoice)
@@ -31,12 +32,15 @@ struct SettingView: View {
             .font(.custom("RoundedMplus1c-Medium", size: 20))
             .padding(.horizontal, 40)
             .navigationBarTitle("", displayMode: .inline)
+            
             .navigationBarItems(trailing: Button(action: {
                 dismiss()
             }, label: {
                 Text("OK")
                     .font(.custom("RoundedMplus1c-Medium", size: 18))
-            }))
+            })
+                .accessibility(identifier: "closeSettingView")
+            )
             
             .toolbar {
                 ToolbarItem(placement: .principal) {

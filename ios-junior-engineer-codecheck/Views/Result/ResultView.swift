@@ -51,6 +51,7 @@ struct ResultView: View {
                         VStack(alignment: .leading, spacing: 5) {
                             Text("今日あなたと")
                             Text("相性が良い都道府県は...")
+                                .accessibility(identifier: "相性が良い都道府県は...")
                             
                         }
                         .font(.custom("RoundedMplus1c-Bold", size: 28))
@@ -93,6 +94,7 @@ struct ResultView: View {
                                         ToolbarItem(placement: .principal) {
                                             Text("特徴")
                                                 .font(.custom("RoundedMplus1c-Bold", size: 18))
+                                                .accessibility(identifier: "特徴")
                                         }
                                     }
                             } label: {
@@ -134,12 +136,15 @@ struct ResultView: View {
                             }
                         } label: {
                             ButtonView(text: "ホームに戻る", color: .green, backColor: .yellow)
-                        }.listRowSeparator(.hidden)
+                        }
+                        .accessibility(identifier: "backHomeButton")
+                        .listRowSeparator(.hidden)
                             .buttonStyle(PlainButtonStyle())
                             .frame(maxWidth: .infinity)
                             .padding(.top, 20)
                         
                     }.listStyle(PlainListStyle())
+                    .accessibility(identifier: "listIdentifier")
                 }
             }
             

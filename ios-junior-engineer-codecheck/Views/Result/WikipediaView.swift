@@ -16,6 +16,7 @@ struct WikipediaView: View {
             Text(brief)
                 .padding(.top, 20)
                 .lineSpacing(7)
+                .accessibility(identifier: "brief")
             
             if let url = wikiURL(todofuken: todofuken) {
                         Link("もっと詳しく読む", destination: url)
