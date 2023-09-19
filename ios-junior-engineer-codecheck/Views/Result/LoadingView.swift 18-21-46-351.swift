@@ -29,6 +29,7 @@ struct LoadingView_Previews: PreviewProvider {
     }
 }
 
+//Lottieから取得したアニメーション画面
 struct LottieView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UIView {

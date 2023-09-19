@@ -29,6 +29,8 @@ struct ResultView: View {
     let del4_kyoto: Set<Character> = ["県", "府"]
     
     var body: some View {
+        
+        //最初の3秒間はロード画面を表示する
         if isLoading {
             ZStack {
                 Rectangle()
@@ -154,21 +156,21 @@ struct ResultView: View {
         }
     }
     
+    //「"県", "府", "都"」の部分を取り除いて外部APIのデータを取得する」(例: 東京都→東京)
     func prefectureData(todofuken: String) -> LocationData? {
         
+        //京都府は「"府", "都"の二つが含まれているため別で処理する」
         if todofuken != "京都府" {
-            
             let foundData = prefectureAPILoader.comments.first(where: { $0.name_ja == todofuken.filter { !del4.contains($0) } })
             return foundData
             
         } else {
-            
             let foundData = prefectureAPILoader.comments.first(where: { $0.name_ja == todofuken.filter { !del4_kyoto.contains($0) } })
             return foundData
-            
         }
     }
     
+    //Int型のデータをString型にする
     func intToDateString(int: Int) -> String {
         let str = String(int)
         

@@ -11,6 +11,7 @@ import XCTest
 final class RealmTests: XCTestCase {
     let dataController = DataController()
     
+    //Realmにアイテムが適切に保存されるかテスト
     func testRealmItem() {
         let userName = "ゆめみん"
         let birthday = Date()
@@ -30,6 +31,7 @@ final class RealmTests: XCTestCase {
         XCTAssertEqual(items.logoURL, logoURL)
     }
     
+    //Realmにアイテムを追加した後、Realmのアイテム数が+1になっているかテスト
     func testRealmItemCount() {
         let nowCount = dataController.realmItems.count
         

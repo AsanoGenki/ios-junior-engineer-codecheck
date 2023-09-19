@@ -7,6 +7,7 @@
 
 import Foundation
 
+//COVID-19 Japan Web APIの構造体
 struct LocationData: Codable {
     let id: Int
     let name_ja: String

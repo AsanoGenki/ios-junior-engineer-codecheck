@@ -8,12 +8,14 @@
 import AVFoundation
 import SwiftUI
 
-//一部ChatGPTを使用して作成  プロンプト: アプリ起動時にBGMを流して、設定画面からそのBGMをオンオフできるアプリをSwiftUIで作成して
+//一部ChatGPTを使用して作成  プロンプト: アプリ起動時にBGMを流して、設定画面からそのBGMをオンオフできるアプリをSwiftUIで作成
+//BGM処理
 class BGMPlayerManager: ObservableObject {
     static let shared = BGMPlayerManager()
 
     private var audioPlayer: AVAudioPlayer?
     
+    //BGMのオンオフをAppStorageに保存
     @AppStorage("BGM") var isPlayingBGM: Bool = true {
         didSet {
             if isPlayingBGM {
@@ -39,12 +41,14 @@ class BGMPlayerManager: ObservableObject {
         audioPlayer?.play()
     }
 
+    //BGM再生
     func playBGM() {
         audioPlayer?.volume = 0.07
         audioPlayer?.numberOfLoops = -1
         audioPlayer?.play()
     }
 
+    //BGM停止
     func stopBGM() {
         audioPlayer?.stop()
         audioPlayer?.currentTime = 0

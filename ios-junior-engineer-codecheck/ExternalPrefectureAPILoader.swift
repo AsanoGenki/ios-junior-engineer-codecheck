@@ -7,6 +7,7 @@
 
 import Foundation
 
+//COVID-19 Japan Web APIの処理
 class ExternalPrefectureAPILoader: ObservableObject {
     @Published var comments = [LocationData]()
 
@@ -30,9 +31,12 @@ class ExternalPrefectureAPILoader: ObservableObject {
             do {
                 let decoder = JSONDecoder()
                 let comments = try decoder.decode([LocationData].self, from: data)
+                
+                //出力データを受け取る
                 DispatchQueue.main.async {
                     self.comments = comments
                 }
+                
             } catch let error {
                 print("Error decoding JSON: \(error.localizedDescription)")
             }

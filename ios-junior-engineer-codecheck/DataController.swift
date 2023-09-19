@@ -23,11 +23,12 @@ class DataController: ObservableObject {
     let calendar = Calendar(identifier: .gregorian)
     let now = Date()
     
+    
+    //音声ファイル再生の処理
     private let clickSound = try!  AVAudioPlayer(data: NSDataAsset(name: "SE_click_normal")!.data)
     private let clickSound2 = try! AVAudioPlayer(data: NSDataAsset(name: "SE_click_small")!.data)
     
     let synthesizer = AVSpeechSynthesizer()
-    
     
     func playClickNormal(){
         if isPlayingSE {
@@ -63,6 +64,7 @@ class DataController: ObservableObject {
     }
     
     
+    //占い結果を取得するAPIの処理
     func readFortune() async {
         
         guard let url = URL(string: "https://yumemi-ios-junior-engineer-codecheck.app.swift.cloud/my_fortune") else {
@@ -91,6 +93,7 @@ class DataController: ObservableObject {
             ]
         ]
         
+        //受け取ったデータの入力(ユーザーネーム、誕生日、血液型等)
         guard let httpBody = try? JSONSerialization.data(withJSONObject: users) else { return }
         
         request.httpBody = httpBody
@@ -114,13 +117,12 @@ class DataController: ObservableObject {
                 let responseObject = try JSONDecoder().decode(Result.self, from: data)
                 
                 DispatchQueue.main.async {
+                    //結果データの出力
                     self.result = responseObject
                 }
                 
+                //Realmに結果データを保存
                 self.addRealmItem(userName: self.userName, birthday: self.birthDay, bloodType: self.bloodType, todofuken: responseObject.name, logoURL: responseObject.logo_url.absoluteString, createDate: self.now)
-                
-                print(responseObject)
-                print(self.realmItems)
                 
             } catch {
                 print(error)
@@ -135,22 +137,14 @@ class DataController: ObservableObject {
         task.resume()
     }
     
-    func wikiURL(todofuken: String) -> URL {
-        let urlString = "https://ja.wikipedia.org/wiki/\(todofuken)"
-        let encodeUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        return URL(string: encodeUrlString)!
-    }
-    
-    
+    //Realmデータの処理
     @Published var model: RealmModel = RealmModel()
-    // Model から受け取る Results<RealmItem> を (View へ)渡す
     var realmItems: Results<RealmItem> {
         model.items
     }
-    // View からのリクエストで、保存するデータ に指定値を持つように RealmItem 作成(を依頼する)
+    
     func addRealmItem(userName: String, birthday: Date, bloodType: String, todofuken: String, logoURL: String, createDate: Date) {
         
-        // Model へ作成を依頼する
         model.addRealmItem(userName: userName, birthday: birthday, bloodType: bloodType, todofuken: todofuken, logoURL: logoURL, createDate: createDate)
     }
     

@@ -18,6 +18,7 @@ struct InputView: View {
 
     @FocusState var focus:Bool
     
+    //ユーザーネームが記述されたときに"占う"ボタンが使えるようにする
     var buttonEnable: Bool {
         if !dataController.userName.isEmpty {
             return true
@@ -56,8 +57,9 @@ struct InputView: View {
                         
                     })
                     .accessibility(identifier: "nameTextField")
+                    
+                    //文字数を30文字以内に制限する
                     .onReceive(Just(dataController.userName)) { _ in
-                        //最大文字数を超えたら、最大文字数までの文字列を代入する
                         if dataController.userName.count > 30 {
                             dataController.userName = String(dataController.userName.prefix(30))
                         }
@@ -171,6 +173,7 @@ struct InputView: View {
         .ignoresSafeArea(.keyboard, edges: .bottom)
     }
     
+    //Date型のデータをString型にする
     func dateToString(dateString: Date) -> String? {
         let formatter: DateFormatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .gregorian)

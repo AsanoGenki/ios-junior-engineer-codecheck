@@ -27,6 +27,7 @@ struct WikipediaView: View {
         .padding(.horizontal)
     }
     
+    //日本語をリンクに含めると文字化けしてしまうため、エンコーディングを行う
     func wikiURL(todofuken: String) -> URL {
         let urlString = "https://ja.wikipedia.org/wiki/\(todofuken)"
         let encodeUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!

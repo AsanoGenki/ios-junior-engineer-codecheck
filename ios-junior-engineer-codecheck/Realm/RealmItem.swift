@@ -8,6 +8,7 @@
 import Foundation
 import RealmSwift
 
+//Realmの構造体
 class RealmItem: Object, Identifiable {
     
     @Persisted(primaryKey: true) var id: UUID = UUID()

@@ -68,6 +68,8 @@ struct RecordView: View {
             }
         }
     }
+    
+    //Date型のデータをString型にする
     func dateToString(dateString: Date) -> String? {
         let formatter: DateFormatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .gregorian)

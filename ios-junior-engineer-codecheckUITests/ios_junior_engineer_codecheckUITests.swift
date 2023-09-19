@@ -18,6 +18,7 @@ final class ios_junior_engineer_codecheckUITests: XCTestCase {
         app.launch()
     }
 
+    //スタート画面のテスト
     func testStartView() throws {
         XCTAssertTrue(app.images["nihonchizuImage"].exists)
         XCTAssertTrue(app.buttons["startButton"].exists)
@@ -25,6 +26,7 @@ final class ios_junior_engineer_codecheckUITests: XCTestCase {
         XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 1).exists)
     }
     
+    //"はじめる"ボタンのテスト
     func testStartButton() throws {
         let startButton = app.buttons["startButton"]
         XCTAssertTrue(startButton.isEnabled)
@@ -35,6 +37,7 @@ final class ios_junior_engineer_codecheckUITests: XCTestCase {
         
     }
     
+    //"占う"ボタンのテスト
     func testReadFortuneButton() throws {
         let readFortuneButton = app.buttons["readFortuneButton"]
         let nameTextField = app.textFields["nameTextField"]
@@ -62,6 +65,7 @@ final class ios_junior_engineer_codecheckUITests: XCTestCase {
         
     }
     
+    //結果画面のテスト
     func testResultView() throws {
         let nameTextField = app.textFields["nameTextField"]
         let briefText = app.staticTexts["brief"]

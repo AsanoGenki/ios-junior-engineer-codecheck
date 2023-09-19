@@ -16,6 +16,7 @@ struct ios_junior_engineer_codecheckApp: App {
         WindowGroup {
             StartView()
                 .environmentObject(bgmPlayerManager)
+            //起動時にBGMの処理
         }
     }
 }
