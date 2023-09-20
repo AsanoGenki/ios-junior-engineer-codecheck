@@ -9,7 +9,7 @@
 本アプリは 「名前」「誕生日」「血液型」をもとに相性の良い都道府県を占うアプリです。
 |サンプル1|サンプル2|
 |:-:|:-:|
-|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/a0ea23aa-5d71-485e-9599-10082f119cd5" width="50%">|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/ece95a39-fbe5-4d4e-8087-77470ea6184a" width="100%">|
+|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/64a34f5c-98b4-44f6-916a-a48db56240c5" width="50%">|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/600ae3f0-4231-4903-b72c-5686660f39ea" width="100%">|
 
 ## 環境
 
@@ -47,7 +47,7 @@ https://github.com/airbnb/lottie-spm.git
 
 ロード画面にアニメーションを表示するために使用
 
-<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/2d2a6489-94bf-4787-9ff7-b250f8b1f453" width="40%">
+<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/5d40ebef-8c6e-4453-b6e0-9c456666b59e" width="40%">
 
 ---
 
@@ -56,13 +56,13 @@ https://github.com/airbnb/lottie-spm.git
 ## UXの向上系
 **[COVID-19 Japan Web API](https://github.com/ryo-ma/covid19-japan-web-api)を追加することで人口、コロナに関する情報を取得**
 
-<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/68a74411-154b-4098-8658-ab724b4082a5" width="40%">
+<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/d4e9bdb3-7704-43f3-8272-943a14477641" width="40%">
 
 ---
 
 **Wikipediaのリンクを追加することで都道府県に関する情報の詳細を読めるようにした**
 
-<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/57d37dfb-3d3f-421d-9c9e-21265569e825" width="30%">
+<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/8479a4a4-2c38-4932-88ac-1cec4bd45ec2" width="30%">
 
 ---
 
@@ -70,26 +70,26 @@ https://github.com/airbnb/lottie-spm.git
 **(ボタンの色が変わる)**
 |記入前|記入後|
 |:-:|:-:|
-|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/d05b1780-fc57-4aed-8e32-4a2a19f93c53" width="80%">|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/f10cfe60-7f3d-465d-a5b7-f2eb5309dd53" width="80%">|
+|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/5ec127e5-dde2-4787-ba8b-a9c51da8ac56" width="80%">|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/dc0dfe0a-5a50-4cd1-bc66-ef45de3f3959" width="80%">|
 
 ---
 
 **入力画面で入力フォームにフォーカスしている時、ボーダーの色を変更**
 |フォーカスしてない時|フォーカスしてる時|
 |:-:|:-:|
-|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/3a5dc83f-a9c2-417d-a551-c8a164d1f90e" width="80%">|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/5fd592f8-4ffa-488d-9375-a2247ccb6ade" width="80%">|
+|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/fccc3799-5b0e-45ab-9558-235235677f90" width="80%">|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/84831c17-1ecf-40d1-b815-a33f389762ac" width="80%">|
 
 ---
 
 **結果画面に遷移する前にロード画面を表示**
 
-<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/2d2a6489-94bf-4787-9ff7-b250f8b1f453" width="40%">
+<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/5d40ebef-8c6e-4453-b6e0-9c456666b59e" width="40%">
 
 ---
 
 **履歴画面を作成**
 
-<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/dc283dc0-204a-4fe8-8f41-9a8fe49646c2" width="40%">
+<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/0bfe283c-d6e5-4018-8e0e-cc4bb136a260" width="40%">
 
 ---
 **サウンドの追加**　
@@ -108,19 +108,19 @@ https://github.com/airbnb/lottie-spm.git
 **カスタムフォントの使用**
 |[コーポレート・ロゴ（ラウンド）ver3](https://logotype.jp/font-corpmaru.html)|[Rounded Mplus 1c](https://fonts.google.com/specimen/M+PLUS+Rounded+1c?subset=japanese)|
 |:-:|:-:|
-|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/b47b484f-ad7f-428c-b013-211285592f88" width="80%">|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/41dab2c5-baa9-4d79-95de-1b745400c899" width="80%">|
+|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/63db7b77-6892-43f5-8bee-5ae78ea40f15" width="80%">|<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/25ec403f-53ce-4e2f-a365-6da6350d0228" width="80%">|
 
 ---
 
 **日本列島の画像**　　　
 
-<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/d629aa00-805b-4546-9799-ba890bd8bf9b" width="40%">
+<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/ae87d458-b123-4bce-978b-e498207d993f" width="40%">
 
 ---
 
 **カスタムボタン**　　　
 
-<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/640db6eb-a461-456a-8ec7-9af2b6697f6a" width="40%">
+<img src="https://github.com/AsanoGenki/ios-junior-engineer-codecheck/assets/82352989/6e291822-1efe-45ea-817d-4979e3d89544" width="40%">
 
 
 
